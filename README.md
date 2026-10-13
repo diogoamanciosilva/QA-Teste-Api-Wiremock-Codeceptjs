@@ -133,9 +133,11 @@ HTTP 200
 ```
 
 ## 🎬 **Vídeo:**
+https://github.com/user-attachments/assets/0b088f0b-6783-4a31-9f99-00118a9f3d53
 
 
 ## 📸 **Print:**
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/123fec6a-fcc6-4db4-b9d2-99d37f08e671" />
 
 
 
