@@ -20,9 +20,9 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 - [🤖 O que é testado](#-o-que-é-testado)
 - [📱 Cenários Automatizados](#-cenários-automatizados)
 - [🚙🔍 1. Consulta de veículos](#%EF%B8%8F-1-consulta-de-veículos)
-- [🚘➕ 2. Cadastro de veículo](#%EF%B8%8F-2-cadastro-de-veículo)
-- [🛻⁉️ 3. Cadastro de veículo](#%EF%B8%8F-3--veículo-inexistente)
-- [🛞🚫 4. Cadastro de veículo](#%EF%B8%8F-4-modelo-não-permitido)
+- [🚘➕ 2. Cadastro de veículo](#2-cadastro-de-veículo
+- [🛻⁉️ 3. Cadastro de veículo](#%EF%B8%8F3--veículo-inexistente)
+- [🛞🚫 4. Cadastro de veículo](#4-modelo-não-permitido)
 - [📁 Estrutura do projeto](#-estrutura-do-projeto)
 - [⚙️ Instalação e configuração do ambiente](#️-instalação-e-configuração-do-ambiente)
 - [🚀 Execução do projeto](#-execução-do-projeto)
