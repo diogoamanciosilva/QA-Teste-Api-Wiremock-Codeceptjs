@@ -228,7 +228,7 @@ QA-teste-api-wiremock-codeceptjs/
 └── README.md
 ```
 
-> ⚠️**Importante** O arquivo `wiremock-standalone-3.9.1.jar` **não está versionado** no repositório por ser um binário pesado. Veja as instruções de download na seção de instalação.
+> ⚠️**Importante:** O arquivo `wiremock-standalone-3.9.1.jar` **não está versionado** no repositório por ser um binário pesado. Veja as instruções de download na seção de instalação.
 
 ### Responsabilidade de cada diretório
 
@@ -341,7 +341,7 @@ https://github.com/user-attachments/assets/687afc1d-f93b-4820-99ba-f5e9046547e9
 <img width="1913" height="1078" alt="image" src="https://github.com/user-attachments/assets/7dd60178-5ee0-4723-bc18-9e2b7a8268ec" />
 
 
-> ⚠️**Importante**  **Não feche esse terminal.** O WireMock precisa permanecer em execução durante os testes.
+> ⚠️**Importante, Não feche esse terminal:** O WireMock precisa permanecer em execução durante os testes.
 
 ---
 
