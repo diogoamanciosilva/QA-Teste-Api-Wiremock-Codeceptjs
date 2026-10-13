@@ -114,7 +114,7 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 
 # 📲 Cenários automatizados
 
-###  ▶️ 1. Consulta de veículos
+#  ▶️ 1. Consulta de veículos
 
 ```http
 GET /api/cars
@@ -126,17 +126,17 @@ GET /api/cars
 ```
 
 
-### 🟰 Resultado esperado:
+# 🟰 Resultado esperado:
 
 ```text
 HTTP 200
 ```
 
-## 🎬 **Vídeo:**
+# 🎬 **Vídeo:**
 https://github.com/user-attachments/assets/0b088f0b-6783-4a31-9f99-00118a9f3d53
 
 
-## 📸 **Print:**
+# 📸 **Print:**
 <img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/123fec6a-fcc6-4db4-b9d2-99d37f08e671" />
 
 
@@ -144,7 +144,7 @@ https://github.com/user-attachments/assets/0b088f0b-6783-4a31-9f99-00118a9f3d53
 
 ---
 
-### ▶️ 2. Cadastro de veículo
+# ▶️ 2. Cadastro de veículo
 
 ```json
 {
@@ -161,7 +161,7 @@ npx codeceptjs run --grep "Cadastrando um veículo utilizando POST" --verbose
 
 
 
-### 🟰 Resultado esperado:
+# 🟰 Resultado esperado:
 
 ```text
 HTTP 201
@@ -169,7 +169,7 @@ HTTP 201
 
 ```
 
-### ↪️↩️ Com retorno contendo:
+# ↪️↩️ Com retorno:
 
 ```json
 {
@@ -178,21 +178,18 @@ HTTP 201
 }
 ```
 
-## 🎬 **Vídeo:**
+# 🎬 **Vídeo:**
 
 https://github.com/user-attachments/assets/59da63ad-e703-4bb5-85b7-7e80aae61ea5
 
 
-## 📸 **Print:**
+# 📸 **Print:**
 
 <img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/e6d0b498-488c-49a4-ad6c-c7ddbe97a483" />
 
-
-
-
 ---
 
-### ▶️ 3.  Veículo inexistente
+# ▶️ 3.  Veículo inexistente
 
 ```json
 {
@@ -206,13 +203,13 @@ https://github.com/user-attachments/assets/59da63ad-e703-4bb5-85b7-7e80aae61ea5
 npx codeceptjs run --debug --grep "Consulta de veiculos: Validando veículo inexistente POST 404"
 ```
 
-### 🟰 Resultado esperado:
+# 🟰 Resultado esperado:
 
 ```text
 HTTP 404
 ```
 
-### ↪️↩️ Com retorno:
+# ↪️↩️ Com retorno:
 
 ```json
 {
@@ -221,13 +218,13 @@ HTTP 404
 ```
 
 
-## 🎬 **Vídeo:**
+# 🎬 **Vídeo:**
 
 https://github.com/user-attachments/assets/dce451e3-28d3-43c6-8281-65dc52ae6853
 
 
 
-## 📸 **Print:**
+# 📸 **Print:**
 <img width="1916" height="1078" alt="image" src="https://github.com/user-attachments/assets/3c3492e8-05aa-4a79-a36e-d495a8b4695c" />
 
 
@@ -235,7 +232,7 @@ https://github.com/user-attachments/assets/dce451e3-28d3-43c6-8281-65dc52ae6853
 
 ---
 
-###  ▶️ 4. Modelo não permitido
+#  ▶️ 4. Modelo não permitido
 
 ```json
 {
@@ -245,13 +242,13 @@ https://github.com/user-attachments/assets/dce451e3-28d3-43c6-8281-65dc52ae6853
 }
 ```
 
-#### 🟰 Resultado esperado:
+# 🟰 Resultado esperado:
 
 ```text
 HTTP 500
 ```
 
-### ↪️↩️ Com retorno:
+# ↪️↩️ Com retorno:
 
 ```json
 {
@@ -263,12 +260,12 @@ HTTP 500
 npx codeceptjs run --grep "Validando veículo com erro POST 500--verbose"
 ```
 
-## 🎬 **Vídeo:**
+# 🎬 **Vídeo:**
 
 https://github.com/user-attachments/assets/420f27e6-cfe7-4cfa-a12a-fb5e2a0c7771
 
 
-## 📸 **Print:**
+# 📸 **Print:**
 
 <img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/d6606bac-091d-4f32-b1e0-8a676bb73c10" />
 
