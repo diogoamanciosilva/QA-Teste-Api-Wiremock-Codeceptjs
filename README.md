@@ -197,7 +197,7 @@ HTTP 404
 HTTP 500
 ```
 
-#### 🟰 Com retorno:
+#### ↪️↩️ Com retorno:
 
 ```json
 {
