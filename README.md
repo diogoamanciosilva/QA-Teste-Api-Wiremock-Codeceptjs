@@ -169,16 +169,7 @@ HTTP 201
 
 ```
 
-## ↪️↩️ Com retorno:
 
-```json
-{
-  "message": "Car successfully registered!",
-  "carId": 6
-}
-
-
-```
 
 # 🎬 **Vídeo:**
 
