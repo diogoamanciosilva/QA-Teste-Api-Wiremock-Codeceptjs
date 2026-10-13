@@ -97,13 +97,13 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 
 # 🤖 O que é testado
 
-👉🏻 Os testes automatizados validam o endpoint:
+👉🏻 **Os testes automatizados validam o endpoint:**
 
 ```text
 /api/cars
 ```
 
-A suíte contempla quatro cenários:
+👉🏻 **A suíte contempla quatro cenários:**
 
 | Cenário                       | Método | Resposta esperada                     |
 | ----------------------------- | ------ | ------------------------------------- |
@@ -120,7 +120,7 @@ A suíte contempla quatro cenários:
 GET /api/cars
 ```
 
-Resultado esperado:
+#### 🟰 Resultado esperado:
 
 ```text
 HTTP 200
@@ -128,7 +128,7 @@ HTTP 200
 
 ---
 
-#### 📍 2. Cadastro de veículo
+#### ▶️ 2. Cadastro de veículo
 
 ```json
 {
@@ -138,13 +138,13 @@ HTTP 200
 }
 ```
 
-Resultado esperado:
+#### 🟰 Resultado esperado:
 
 ```text
 HTTP 201
 ```
 
-Com retorno contendo:
+#### ↪️↩️ Com retorno contendo:
 
 ```json
 {
@@ -155,7 +155,7 @@ Com retorno contendo:
 
 ---
 
-#### 📍 3.  Veículo inexistente
+#### ▶️ 3.  Veículo inexistente
 
 ```json
 {
@@ -165,13 +165,13 @@ Com retorno contendo:
 }
 ```
 
-Resultado esperado:
+#### 🟰 Resultado esperado:
 
 ```text
 HTTP 404
 ```
 
-Com retorno:
+#### ↪️↩️ Com retorno:
 
 ```json
 {
@@ -181,7 +181,7 @@ Com retorno:
 
 ---
 
-####  📍 4. Modelo não permitido
+####  ▶️ 4. Modelo não permitido
 
 ```json
 {
@@ -191,13 +191,13 @@ Com retorno:
 }
 ```
 
-Resultado esperado:
+#### 🟰 Resultado esperado:
 
 ```text
 HTTP 500
 ```
 
-Com retorno:
+#### 🟰 Com retorno:
 
 ```json
 {
