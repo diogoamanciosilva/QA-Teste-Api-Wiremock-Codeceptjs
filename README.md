@@ -699,6 +699,8 @@ Evoluções planejadas, da mais simples à mais avançada:
 
 # 🚗 Testes de API com CodeceptJS e WireMock
 
+![API Tests](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml/badge.svg)
+
 Projeto de automação de testes de **API** desenvolvido com **CodeceptJS** (helpers `REST` e `JSONResponse`) e executado contra uma API de gerenciamento de veículos simulada com **WireMock**.
 
 A base didática e a API simulada partem dos conhecimentos adquiridos no curso **Automação de API com JavaScript**, da **Qazando** (https://qazando.com.br), com os professores **Eduardo Finotti** e **Hebert Soares**. Os testes e a estrutura deste repositório foram desenvolvidos por **Diogo Amancio**.
@@ -706,11 +708,11 @@ A base didática e a API simulada partem dos conhecimentos adquiridos no curso *
 | Item | Detalhe |
 | :--- | :--- |
 | **Foco** | Automação de testes de API |
-| **Stack** | CodeceptJS (REST + JSONResponse), WireMock 3.9.1, Node.js, Java, Postman, Mochawesome |
+| **Stack** | CodeceptJS (REST + JSONResponse), WireMock 3.9.1, Node.js, Java, Postman, Mochawesome, GitHub Actions |
 | **Endpoint testado** | `/api/cars` |
 | **Cobertura** | 4 cenários: `GET` 200 · `POST` 201 · `POST` 404 · `POST` 500 |
 | **Resultado esperado** | `OK \| 4 passed` |
-| **Ambiente validado** | Windows com PowerShell |
+| **Ambiente validado** | Windows com PowerShell (local) e Ubuntu (GitHub Actions) |
 
 📬 **Contato:** [LinkedIn](https://www.linkedin.com/in/diogoamanciosilva/) · [E-mail](mailto:diogoamanciosilva@gmail.com)
 
@@ -726,12 +728,14 @@ A base didática e a API simulada partem dos conhecimentos adquiridos no curso *
 - [Estrutura do projeto](#-estrutura-do-projeto)
 - [Instalação e configuração do ambiente](#-instalação-e-configuração-do-ambiente)
 - [Execução do projeto](#-execução-do-projeto)
+- [Execução simplificada (scripts npm)](#-execução-simplificada-scripts-npm)
 - [Configuração do CodeceptJS](#-configuração-do-codeceptjs)
 - [Como o WireMock funciona neste projeto](#-como-o-wiremock-funciona-neste-projeto)
 - [Postman](#-postman)
 - [Relatório de testes com Mochawesome](#-relatório-de-testes-com-mochawesome)
 - [Problemas comuns](#-problemas-comuns)
 - [Validação do ambiente](#-validação-do-ambiente)
+- [Integração contínua (GitHub Actions)](#-integração-contínua-github-actions)
 - [Limitações e escopo](#-limitações-e-escopo)
 - [Próximos passos (CI/CD)](#-próximos-passos-cicd)
 - [Aprendizados técnicos](#-aprendizados-técnicos)
@@ -775,6 +779,7 @@ O objetivo é praticar a estrutura de automação (configuração, helpers, orga
 ![JSON](https://img.shields.io/badge/JSON-Data%20Format-000000?style=for-the-badge&logo=json&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-Runtime-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![npm](https://img.shields.io/badge/npm-Package%20Manager-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell-Terminal-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
@@ -980,6 +985,9 @@ https://github.com/user-attachments/assets/41e2e5ef-0b70-4623-a24e-5e31b2a15d8c
 
 ```text
 QA-teste-api-wiremock-codeceptjs/
+├── .github/
+│   └── workflows/
+│       └── api-tests.yml            # Pipeline de CI (GitHub Actions)
 ├── backend/                         # Testes automatizados com CodeceptJS
 │   ├── codecept.conf.js             # Configuração do CodeceptJS
 │   ├── package.json                 # Dependências e scripts do projeto
@@ -993,18 +1001,22 @@ QA-teste-api-wiremock-codeceptjs/
 │   └── post-cars-500.json           # POST /api/cars → 500
 ├── __files/
 │   └── cars.json                    # Body de resposta do GET /api/cars
+├── scripts/
+│   └── download-wiremock.js         # Download do WireMock (funciona em qualquer SO)
 ├── .gitignore
 └── README.md
 ```
 
-> ⚠️ **Importante:** o arquivo `wiremock-standalone-3.9.1.jar` **não está versionado** no repositório por ser um binário pesado. As instruções de download estão na seção de instalação.
+> ⚠️ **Importante:** o arquivo `wiremock-standalone-3.9.1.jar` **não está versionado** no repositório por ser um binário pesado. As instruções de download estão na seção de instalação (ou use `npm run mock:setup`, descrito em [Execução simplificada](#-execução-simplificada-scripts-npm)).
 
 | Diretório/arquivo | Responsabilidade |
 | :--- | :--- |
+| `.github/workflows/` | Pipeline de integração contínua (GitHub Actions) |
 | `backend/` | Configuração e testes do CodeceptJS |
 | `backend/tests/` | Cenários automatizados |
 | `mappings/` | Endpoints, requisições e respostas simuladas pelo WireMock |
 | `__files/` | Bodies de resposta referenciados pelos mappings |
+| `scripts/` | Scripts auxiliares (download do WireMock) |
 | `README.md` | Documentação do projeto |
 
 ---
@@ -1054,6 +1066,8 @@ Confirme que o arquivo está na raiz:
 ```powershell
 dir *.jar
 ```
+
+> **Alternativa:** depois de instalar as dependências (passo 5), o comando `npm run mock:setup` faz o mesmo download e funciona em qualquer sistema operacional.
 
 ### 5. Instalar as dependências
 
@@ -1161,12 +1175,35 @@ https://github.com/user-attachments/assets/d42b4911-3fe0-478a-b40d-a0d87f9a912e
 
 ---
 
+## ⚡ Execução simplificada (scripts npm)
+
+Com o Node.js e o Java instalados, é possível executar o projeto com scripts:
+
+```powershell
+cd backend
+npm install
+npm run mock:setup   # baixa o WireMock (só na primeira vez)
+npm run mock         # Terminal 1: inicia o WireMock na porta 8080
+npm test             # Terminal 2: executa a suíte
+```
+
+O `npm run mock` já aponta para as pastas `mappings/` e `__files/`, então pode ser executado de dentro de `backend/`.
+
+A URL base pode ser alterada pela variável de ambiente `BASE_URL`:
+
+```powershell
+$env:BASE_URL = "http://localhost:9090"
+npm test
+```
+
+---
+
 ## 🔩 Configuração do CodeceptJS
 
 ```javascript
 helpers: {
   REST: {
-    endpoint: 'http://localhost:8080',
+    endpoint: process.env.BASE_URL || 'http://localhost:8080',
     defaultHeaders: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -1175,6 +1212,8 @@ helpers: {
   JSONResponse: {}
 }
 ```
+
+O `endpoint` usa a variável de ambiente `BASE_URL`. Quando ela não está definida, o valor padrão é `http://localhost:8080`.
 
 > ⚠️ **Importante:** a porta usada pelo WireMock e a porta configurada no `endpoint` do CodeceptJS precisam ser iguais.
 
@@ -1226,6 +1265,8 @@ O relatório pode ser consultado em:
 backend/mochawesome-report/mochawesome.html
 ```
 
+Nas execuções do GitHub Actions, o relatório fica disponível como *artifact* da execução.
+
 <details>
 <summary>🎬 Evidência (vídeo)</summary>
 
@@ -1239,15 +1280,16 @@ https://github.com/user-attachments/assets/d63cd263-7e91-4a78-bfe9-212dab089143
 
 | Sintoma | Causa provável | Solução |
 | :--- | :--- | :--- |
-| Testes retornam `404` | WireMock iniciado fora da raiz do projeto | Inicie o WireMock na pasta que contém `mappings` |
+| Testes retornam `404` | WireMock iniciado fora da raiz do projeto | Inicie o WireMock na pasta que contém `mappings` ou use `npm run mock` |
 | `Invalid URL` | URL sem a barra inicial | Use `"/api/cars"` em vez de `"api/cars"` |
 | `I.seeResponseCodeIs is not a function` | Helper `JSONResponse` ausente | Adicione `JSONResponse: {}` na configuração |
-| Porta `8080` em uso | Outro processo está usando a porta | Encerre o processo anterior ou use outra porta |
+| Porta `8080` em uso | Outro processo está usando a porta | Encerre o processo anterior ou use outra porta e ajuste a variável `BASE_URL` |
 | `java` não é reconhecido | Java não instalado ou fora do `PATH` | Instale o Java e execute `java -version` |
 | `node` não é reconhecido | Node.js não instalado ou fora do `PATH` | Instale o Node.js e execute `node --version` |
 | `npm install` apresenta erro | Comando executado fora da pasta `backend` | Execute `cd backend` antes do `npm install` |
 | Testes não conectam à API | WireMock não está em execução | Inicie o WireMock na porta configurada |
-| `Unable to access jarfile` | Arquivo `.jar` ausente na raiz do projeto | Execute o comando de download do WireMock (passo 4 da instalação) |
+| `Unable to access jarfile` | Arquivo `.jar` ausente na raiz do projeto | Execute o comando de download do WireMock (passo 4 da instalação) ou `npm run mock:setup` |
+| Pipeline falha em "Aguardar WireMock" | WireMock não iniciou (jar ausente ou porta ocupada) | Consulte o log do WireMock exibido no próprio passo da execução |
 
 ---
 
@@ -1267,6 +1309,20 @@ O ambiente está correto quando todas as condições abaixo forem atendidas:
 
 ---
 
+## 🔁 Integração contínua (GitHub Actions)
+
+A cada `push` ou `pull request` na branch `master`, o workflow [`api-tests.yml`](.github/workflows/api-tests.yml):
+
+1. configura Node.js e Java;
+2. instala as dependências (`npm ci`);
+3. baixa e inicia o WireMock, aguardando que ele responda;
+4. executa a suíte com `npm test`;
+5. publica o relatório Mochawesome como *artifact* da execução.
+
+O resultado pode ser consultado na aba **Actions** do repositório.
+
+---
+
 ## 🚧 Limitações e escopo
 
 Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhecimentos do curso *Automação de API com JavaScript*. As limitações abaixo são conhecidas e fazem parte do escopo definido.
@@ -1277,28 +1333,20 @@ Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhec
 - **Mock sem estado:** as respostas são fixas, ou seja, o veículo cadastrado no `POST` não aparece em um `GET` posterior.
 - **Validações básicas:** as verificações se concentram em status code e mensagens de retorno, sem validação de schema, tipos de dados ou tempo de resposta.
 - **Cenários negativos não explorados:** campos ausentes, valores inválidos, body vazio e métodos não suportados ficaram fora desta versão.
-- **Execução manual:** o WireMock e os testes são executados em dois terminais separados. O guia foi validado em ambiente Windows com PowerShell.
 
 ---
 
 ## 🎯 Próximos passos (CI/CD)
 
+✅ **Concluído:** scripts npm, URL base por variável de ambiente, download automatizado do WireMock e pipeline no GitHub Actions com badge de status.
+
 Evoluções planejadas, da mais simples à mais avançada:
 
-1. **Padronizar a execução local:** criar scripts no `package.json` (por exemplo, `npm run mock` e `npm test`) e definir a URL base por variável de ambiente, em vez de fixá-la no `codecept.conf.js`.
-2. **Automatizar o WireMock:** baixar e iniciar o WireMock por script ou Docker, eliminando o download manual e a necessidade de dois terminais.
-3. **Pipeline com GitHub Actions**, acionado em `push` e `pull request`:
-   - fazer checkout e configurar Node.js e Java;
-   - instalar as dependências (`npm ci`);
-   - iniciar o WireMock em segundo plano e aguardar que ele responda;
-   - executar `npx codeceptjs run`;
-   - publicar o relatório Mochawesome como *artifact* da execução.
-4. **Badge de status** do pipeline no README, para dar visibilidade imediata ao resultado.
-5. **Ampliar a cobertura:** cenários negativos (campos obrigatórios, tipos e valores inválidos), validação de schema das respostas e uso de *Scenarios* do WireMock para simular estado.
-6. **Revisar os status codes** dos erros de validação, alinhando-os às boas práticas REST (`400`/`422`), e documentar a decisão.
-7. **Versionar a coleção do Postman** em uma pasta `postman/`, com asserts na aba *Tests*.
-8. **Rastreabilidade:** usar os IDs `CT-01` a `CT-04` também nos nomes dos testes e no relatório.
-9. **Compatibilidade multiplataforma:** documentar os comandos para Linux e macOS, além do PowerShell.
+1. **Ampliar a cobertura:** cenários negativos (campos obrigatórios, tipos e valores inválidos), validação de schema das respostas e uso de *Scenarios* do WireMock para simular estado.
+2. **Revisar os status codes** dos erros de validação, alinhando-os às boas práticas REST (`400`/`422`), e documentar a decisão.
+3. **Versionar a coleção do Postman** em uma pasta `postman/`, com asserts na aba *Tests*.
+4. **Rastreabilidade:** usar os IDs `CT-01` a `CT-04` também nos nomes dos testes e no relatório.
+5. **Compatibilidade multiplataforma:** documentar os comandos para Linux e macOS, além do PowerShell.
 
 ---
 
@@ -1317,10 +1365,11 @@ Evoluções planejadas, da mais simples à mais avançada:
 
   Com isso, entendi que o **Postman** complementa a automação, funcionando como ferramenta de exploração, validação e diagnóstico, enquanto o **CodeceptJS** garante a execução repetível e confiável dos cenários.
 - **Relatórios de execução:** geração de relatório visual com Mochawesome, facilitando a análise de resultados e a comunicação com outras pessoas do time.
+- **Integração contínua com GitHub Actions:** criação de um workflow que configura Node.js e Java, baixa e inicia o WireMock, aguarda sua disponibilidade, executa a suíte e publica o relatório Mochawesome como *artifact*, além do uso de scripts npm e variáveis de ambiente para tornar a execução reproduzível.
 - **Diagnóstico de problemas:** análise de erros comuns do ambiente (WireMock iniciado fora da raiz do projeto, porta em uso, Java ou Node fora do `PATH`, `npm install` executado na pasta errada) e registro das soluções na tabela de *Problemas comuns*.
 - **Organização e documentação:** estruturação do repositório em pastas com responsabilidades claras (`backend/` e `mappings/`) e escrita de um README com passo a passo reproduzível.
 - **Versionamento com Git e GitHub:** uso do Git para controle de versão e publicação do projeto.
-- **Visão crítica e evolução:** identificação das limitações do projeto e planejamento dos próximos passos (CI/CD com GitHub Actions, ampliação de cobertura e validação de schema).
+- **Visão crítica e evolução:** identificação das limitações do projeto e planejamento dos próximos passos (ampliação de cobertura, validação de schema e versionamento da coleção do Postman).
 
 ---
 
