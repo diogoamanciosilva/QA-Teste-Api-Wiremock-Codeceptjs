@@ -22,7 +22,7 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 - [🚙🔍 1. Consulta de veículos](#%EF%B8%8F-1-consulta-de-veículos)
 - [🚘➕ 2. Cadastro de veículo](#%EF%B8%8F-2-cadastro-de-veículo)
 - [🛻⁉️ 3. Cadastro de veículo](#%EF%B8%8F-3--veículo-inexistente)
-- [🛞🚫 3. Cadastro de veículo](#%EF%B8%8F-4-modelo-não-permitido)
+- [🛞🚫 4. Cadastro de veículo](#%EF%B8%8F-4-modelo-não-permitido)
 - [📁 Estrutura do projeto](#-estrutura-do-projeto)
 - [⚙️ Instalação e configuração do ambiente](#️-instalação-e-configuração-do-ambiente)
 - [🚀 Execução do projeto](#-execução-do-projeto)
