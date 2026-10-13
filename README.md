@@ -169,6 +169,13 @@ HTTP 201
 
 ```
 
+# ↪️↩️ Com retorno:
+
+```json
+{
+  "message": "Vehicle not found."
+}
+```
 
 
 # 🎬 **Vídeo:**
