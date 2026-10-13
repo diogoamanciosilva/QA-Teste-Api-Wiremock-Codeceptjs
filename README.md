@@ -459,7 +459,7 @@ O Postman complementa a automação como ferramenta de exploração e validaçã
 - **Conferir** método HTTP, payload e status codes
 - **Diagnosticar** falhas durante o desenvolvimento
 
-> 👉🏻**Postman** → validação manual → CodeceptJS → automação → WireMock → simulação do backend.
+> ⚠️**Importante**: Postman → validação manual → CodeceptJS → automação → WireMock → simulação do backend.
 
 
 # 🔎🚙 1. Consultar veículos
