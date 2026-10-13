@@ -213,6 +213,15 @@ HTTP 404
 }
 ```
 
+## 🎬 **Vídeo:**
+
+https://github.com/user-attachments/assets/a5d8d6d8-bce6-41c7-b7f1-900cb713bb9b
+
+
+## 📸 **Print:**
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/44bc631e-aa1e-4db9-ad10-4eabdf8d48ec" />
+
+
 ---
 
 ###  ▶️ 4. Modelo não permitido
