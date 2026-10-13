@@ -122,7 +122,7 @@ GET /api/cars
 
 
 ```powershell
-   npx codeceptjs run --grep "Fazendo um GET para o endpoint"
+  npx codeceptjs run --grep "Fazendo um GET para o endpoint" --verbose
 ```
 
 
@@ -134,11 +134,10 @@ HTTP 200
 
 ## 🎬 **Vídeo:**
 
-https://github.com/user-attachments/assets/25f694ab-bd95-47bf-8703-c883fcc455b1
 
 ## 📸 **Print:**
 
-<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/20b45ecb-6f85-47b3-805b-9ff17726fa07" />
+
 
 
 ---
@@ -155,7 +154,7 @@ https://github.com/user-attachments/assets/25f694ab-bd95-47bf-8703-c883fcc455b1
 
 
 ```powershell
-npx codeceptjs run --grep "Cadastrando um veículo utilizando POST"
+npx codeceptjs run --grep "Cadastrando um veículo utilizando POST" --verbose
 ```
 
 
@@ -165,16 +164,6 @@ npx codeceptjs run --grep "Cadastrando um veículo utilizando POST"
 ```text
 HTTP 201
 ```
-
-
-## 🎬 **Vídeo:**
-
-https://github.com/user-attachments/assets/87de561d-438b-4ece-b121-b4cf024fae06
-
-## 📸 **Print:**
-
-<img width="1917" height="1077" alt="image" src="https://github.com/user-attachments/assets/9646b232-6549-48bc-a99f-fa337bb0e63f" />
-
 
 ```
 
@@ -186,6 +175,15 @@ https://github.com/user-attachments/assets/87de561d-438b-4ece-b121-b4cf024fae06
   "carId": 6
 }
 ```
+
+## 🎬 **Vídeo:**
+
+
+
+## 📸 **Print:**
+
+
+
 
 ---
 
@@ -213,12 +211,18 @@ HTTP 404
 }
 ```
 
+
+```powershell
+npx codeceptjs run --grep "Validando veículo inexistente POST 404--verbose"
+```
+
+
 ## 🎬 **Vídeo:**
-https://github.com/user-attachments/assets/a5d8d6d8-bce6-41c7-b7f1-900cb713bb9b
+
 
 
 ## 📸 **Print:**
-<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/44bc631e-aa1e-4db9-ad10-4eabdf8d48ec" />
+
 
 
 ---
@@ -247,12 +251,16 @@ HTTP 500
 }
 ```
 
+```powershell
+npx codeceptjs run --grep "Validando veículo com erro POST 500--verbose"
+```
+
 ## 🎬 **Vídeo:**
-https://github.com/user-attachments/assets/f636b8fc-1738-4cb9-836f-08ce7d589a44
+
 
 
 ## 📸 **Print:**
-<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/f92d0363-7fd1-4d94-aa5b-9d48a846c916" />
+
 
 
 ---
