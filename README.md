@@ -265,10 +265,12 @@ npx codeceptjs run --grep "Validando veículo com erro POST 500--verbose"
 
 ## 🎬 **Vídeo:**
 
+https://github.com/user-attachments/assets/420f27e6-cfe7-4cfa-a12a-fb5e2a0c7771
 
 
 ## 📸 **Print:**
 
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/d6606bac-091d-4f32-b1e0-8a676bb73c10" />
 
 
 ---
