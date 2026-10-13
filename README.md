@@ -120,6 +120,10 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 GET /api/cars
 ```
 
+``
+npx codeceptjs run --grep "Fazendo um GET para o endpoint"
+```
+
 ### 🟰 Resultado esperado:
 
 ```text
