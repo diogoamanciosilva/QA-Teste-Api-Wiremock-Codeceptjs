@@ -180,9 +180,12 @@ HTTP 201
 
 ## 🎬 **Vídeo:**
 
+https://github.com/user-attachments/assets/59da63ad-e703-4bb5-85b7-7e80aae61ea5
 
 
 ## 📸 **Print:**
+
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/e6d0b498-488c-49a4-ad6c-c7ddbe97a483" />
 
 
 
