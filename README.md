@@ -222,10 +222,9 @@ HTTP 404
 
 
 ## 🎬 **Vídeo:**
-https://github.com/user-attachments/assets/6818398c-7b8b-45d3-821b-c50749db3b22
 
 ## 📸 **Print:**
-<img width="1902" height="1078" alt="image" src="https://github.com/user-attachments/assets/c0f712a1-33df-49c3-83ef-29531c9c9958" />
+
 
 
 
