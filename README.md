@@ -662,26 +662,31 @@ Evoluções planejadas, da mais simples à mais avançada:
 
 ## 💡 Aprendizados técnicos
 
-Principais conhecimentos praticados e consolidados durante o desenvolvimento deste projeto:
 
 - **Automação de testes de API com CodeceptJS:** configuração do projeto, escrita de cenários e execução da suíte via `npx codeceptjs run`, incluindo o modo `--verbose` para depuração.
 - **Helpers `REST` e `JSONResponse`:** uso do `REST` para enviar requisições HTTP (`GET` e `POST`) e do `JSONResponse` para validar status code e corpo das respostas. Aprendi na prática que, sem o `JSONResponse` configurado, os métodos de validação, como `seeResponseCodeIs`, não ficam disponíveis.
 - **Configuração de ambiente de testes:** definição da URL base e dos `defaultHeaders` no `codecept.conf.js`, uso de caminhos relativos com barra inicial (`/api/cars`) e a necessidade de manter a porta do WireMock alinhada com o `endpoint` do CodeceptJS.
+- 
 - **Mocking de API com WireMock:** criação de mappings em JSON para simular diferentes respostas de um mesmo endpoint, permitindo testar cenários de sucesso e de erro de forma controlada e sem depender de um backend real.
 - **Cenários positivos e negativos:** validação de respostas `200`, `201`, `404` e `500`, entendendo a importância de testar não só o caminho feliz, mas também o comportamento diante de falhas.
 - **Códigos de status HTTP:** compreensão do significado de cada código e senso crítico sobre sua adequação. Neste projeto, o 404 e o 500 foram usados com finalidade didática, e reconheço que, em uma API real, erros de validação seriam tratados com `400` ou `422`.
-- **Validação manual com Postman:** uso do Postman para explorar a API, conferir método, payload e resposta antes de automatizar, complementando (e não substituindo) a automação.
+- 
+- **Testes exploratórios de API com Postman:** uso do Postman como etapa prévia à automação. Antes de transformar um cenário em teste no CodeceptJS, eu enviava as requisições `GET /api/cars` e `POST /api/cars` manualmente para:
+  - confirmar o comportamento esperado do endpoint (método HTTP, payload JSON, status code e mensagem retornada);
+  - validar se o WireMock respondia conforme o mapping configurado;
+  - diagnosticar falhas, comparando o resultado manual com o resultado da automação para descobrir se o problema estava no teste, no mock ou no ambiente.
+ 
+  Com isso, entendi que o **Postman** complementa a automação, funcionando como ferramenta de exploração, validação e diagnóstico, enquanto o **CodeceptJS** garante a execução repetível e confiável dos cenários.
+  
 - **Relatórios de execução:** geração de relatório visual com Mochawesome, facilitando a análise de resultados e a comunicação com outras pessoas do time.
 - **Diagnóstico de problemas:** análise de erros comuns do ambiente (WireMock iniciado fora da raiz do projeto, porta em uso, Java ou Node fora do `PATH`, `npm install` executado na pasta errada) e registro das soluções na tabela de *Problemas comuns*.
 - **Organização e documentação:** estruturação do repositório em pastas com responsabilidades claras (`backend/` e `mappings/`) e escrita de um README com passo a passo reproduzível.
 - **Versionamento com Git e GitHub:** uso do Git para controle de versão e publicação do projeto como portfólio.
 - **Visão crítica e evolução:** identificação das limitações do projeto e planejamento dos próximos passos (CI/CD com GitHub Actions, ampliação de cobertura e validação de schema).
-
  ---
  
  ## 📬 Contato
 
- 
 | LinkedIn                   |  https://www.linkedin.com/in/diogoamanciosilva/ |
 | ------------------------- | ------: |
 
