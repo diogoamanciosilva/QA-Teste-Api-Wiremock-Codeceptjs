@@ -114,7 +114,7 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 
 # 📲 Cenários automatizados
 
-###  📍 1. Consulta de veículos
+###  ▶️ 1. Consulta de veículos
 
 ```http
 GET /api/cars
