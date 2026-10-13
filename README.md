@@ -126,6 +126,15 @@ GET /api/cars
 HTTP 200
 ```
 
+## 🎬 **Vídeo:**
+
+https://github.com/user-attachments/assets/25f694ab-bd95-47bf-8703-c883fcc455b1
+
+## 📸 **Print:**
+
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/20b45ecb-6f85-47b3-805b-9ff17726fa07" />
+
+
 ---
 
 #### ▶️ 2. Cadastro de veículo
