@@ -115,9 +115,11 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 # 📲 Cenários automatizados
 
 ###  📍 1. Consulta de veículos
+
 ``
 npx codeceptjs run --grep "Fazendo um GET para o endpoint"
 ```
+
 
 ```http
 GET /api/cars
