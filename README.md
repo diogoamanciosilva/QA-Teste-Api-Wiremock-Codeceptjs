@@ -214,7 +214,6 @@ HTTP 404
 ```
 
 ## 🎬 **Vídeo:**
-
 https://github.com/user-attachments/assets/a5d8d6d8-bce6-41c7-b7f1-900cb713bb9b
 
 
@@ -247,6 +246,14 @@ HTTP 500
   "message": "Internal server error: model 'up tsi' is not allowed."
 }
 ```
+
+## 🎬 **Vídeo:**
+https://github.com/user-attachments/assets/f636b8fc-1738-4cb9-836f-08ce7d589a44
+
+
+## 📸 **Print:**
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/f92d0363-7fd1-4d94-aa5b-9d48a846c916" />
+
 
 ---
 
