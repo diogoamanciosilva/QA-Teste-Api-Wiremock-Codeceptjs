@@ -628,19 +628,54 @@ O ambiente está correto quando todas as condições abaixo forem atendidas:
 
 ## 🚧 Limitações e escopo
 
+Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhecimentos do curso *Automação de API com JavaScript*. 
 
+- **API simulada:** A suíte de testes é executada contra uma infraestrutura de mocking (via WireMock), visando emular um recorte funcional do ambiente de produção. O objetivo é praticar a estrutura de automação (CodeceptJS, helpers `REST` e `JSONResponse`), a organização do projeto e a validação de respostas, não validar regras de negócio de uma aplicação.
+- **Cobertura enxuta:** são quatro cenários sobre `/api/cars` (`GET` 200, `POST` 201, 404 e 500), escolhidos para exercitar sucesso e erro com qualidade, e não para cobrir a API de forma exaustiva.
+- **Códigos de status didáticos:** o 404 e o 500 no `POST` foram adotados para simular comportamentos distintos de forma controlada. Em uma API real, erros de validação de payload normalmente seriam respondidos com `400` ou `422`.
+- **Mock sem estado:** as respostas são fixas, ou seja, o veículo cadastrado no `POST` não aparece em um `GET` posterior.
+- **Validações básicas:** as verificações se concentram em status code e mensagens de retorno, sem validação de schema, tipos de dados ou tempo de resposta.
+- **Cenários negativos não explorados:** campos ausentes, valores inválidos, body vazio e métodos não suportados ficaram fora desta versão.
+- **Execução manual:** o WireMock e os testes são executados em dois terminais separados. O guia foi validado em ambiente Windows com PowerShell.
 
 ------------
 
 
  ## 🚀 Próximos passos (CI/CD)
 
+Evoluções planejadas, da mais simples à mais avançada:
+
+1. **Padronizar a execução local:** criar scripts no `package.json` (por exemplo, `npm run mock` e `npm test`) e definir a URL base por variável de ambiente, em vez de fixá-la no `codecept.conf.js`.
+2. **Dispensar o `.jar` versionado:** subir o WireMock via Docker ou baixar o `.jar` por script, mantendo o repositório mais leve.
+3. **Pipeline com GitHub Actions**, acionado em `push` e `pull request`:
+   - fazer checkout e configurar Node.js e Java;
+   - instalar as dependências (`npm ci`);
+   - iniciar o WireMock em segundo plano e aguardar que ele responda;
+   - executar `npx codeceptjs run`;
+   - publicar o relatório Mochawesome como *artifact* da execução.
+4. **Badge de status** do pipeline no README, para dar visibilidade imediata ao resultado.
+5. **Ampliar a cobertura:** cenários negativos (campos obrigatórios, tipos e valores inválidos), validação de schema das respostas e uso de *Scenarios* do WireMock para simular estado.
+6. **Revisar os status codes** dos erros de validação, alinhando-os às boas práticas REST (`400`/`422`), e documentar a decisão.
 
  ---
  
+
 ## 💡 Aprendizados técnicos
 
+Principais conhecimentos praticados e consolidados durante o desenvolvimento deste projeto:
 
+- **Automação de testes de API com CodeceptJS:** configuração do projeto, escrita de cenários e execução da suíte via `npx codeceptjs run`, incluindo o modo `--verbose` para depuração.
+- **Helpers `REST` e `JSONResponse`:** uso do `REST` para enviar requisições HTTP (`GET` e `POST`) e do `JSONResponse` para validar status code e corpo das respostas. Aprendi na prática que, sem o `JSONResponse` configurado, os métodos de validação, como `seeResponseCodeIs`, não ficam disponíveis.
+- **Configuração de ambiente de testes:** definição da URL base e dos `defaultHeaders` no `codecept.conf.js`, uso de caminhos relativos com barra inicial (`/api/cars`) e a necessidade de manter a porta do WireMock alinhada com o `endpoint` do CodeceptJS.
+- **Mocking de API com WireMock:** criação de mappings em JSON para simular diferentes respostas de um mesmo endpoint, permitindo testar cenários de sucesso e de erro de forma controlada e sem depender de um backend real.
+- **Cenários positivos e negativos:** validação de respostas `200`, `201`, `404` e `500`, entendendo a importância de testar não só o caminho feliz, mas também o comportamento diante de falhas.
+- **Códigos de status HTTP:** compreensão do significado de cada código e senso crítico sobre sua adequação. Neste projeto, o 404 e o 500 foram usados com finalidade didática, e reconheço que, em uma API real, erros de validação seriam tratados com `400` ou `422`.
+- **Validação manual com Postman:** uso do Postman para explorar a API, conferir método, payload e resposta antes de automatizar, complementando (e não substituindo) a automação.
+- **Relatórios de execução:** geração de relatório visual com Mochawesome, facilitando a análise de resultados e a comunicação com outras pessoas do time.
+- **Diagnóstico de problemas:** análise de erros comuns do ambiente (WireMock iniciado fora da raiz do projeto, porta em uso, Java ou Node fora do `PATH`, `npm install` executado na pasta errada) e registro das soluções na tabela de *Problemas comuns*.
+- **Organização e documentação:** estruturação do repositório em pastas com responsabilidades claras (`backend/` e `mappings/`) e escrita de um README com passo a passo reproduzível.
+- **Versionamento com Git e GitHub:** uso do Git para controle de versão e publicação do projeto como portfólio.
+- **Visão crítica e evolução:** identificação das limitações do projeto e planejamento dos próximos passos (CI/CD com GitHub Actions, ampliação de cobertura e validação de schema).
 
  ---
  
