@@ -114,13 +114,13 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 
 # 📲 Cenários automatizados
 
-####  📍 1. Consulta de veículos
+###  📍 1. Consulta de veículos
 
 ```http
 GET /api/cars
 ```
 
-#### 🟰 Resultado esperado:
+### 🟰 Resultado esperado:
 
 ```text
 HTTP 200
@@ -137,7 +137,7 @@ https://github.com/user-attachments/assets/25f694ab-bd95-47bf-8703-c883fcc455b1
 
 ---
 
-#### ▶️ 2. Cadastro de veículo
+### ▶️ 2. Cadastro de veículo
 
 ```json
 {
@@ -147,13 +147,13 @@ https://github.com/user-attachments/assets/25f694ab-bd95-47bf-8703-c883fcc455b1
 }
 ```
 
-#### 🟰 Resultado esperado:
+### 🟰 Resultado esperado:
 
 ```text
 HTTP 201
 ```
 
-#### ↪️↩️ Com retorno contendo:
+### ↪️↩️ Com retorno contendo:
 
 ```json
 {
@@ -164,7 +164,7 @@ HTTP 201
 
 ---
 
-#### ▶️ 3.  Veículo inexistente
+### ▶️ 3.  Veículo inexistente
 
 ```json
 {
@@ -174,13 +174,13 @@ HTTP 201
 }
 ```
 
-#### 🟰 Resultado esperado:
+### 🟰 Resultado esperado:
 
 ```text
 HTTP 404
 ```
 
-#### ↪️↩️ Com retorno:
+### ↪️↩️ Com retorno:
 
 ```json
 {
@@ -190,7 +190,7 @@ HTTP 404
 
 ---
 
-####  ▶️ 4. Modelo não permitido
+###  ▶️ 4. Modelo não permitido
 
 ```json
 {
@@ -206,7 +206,7 @@ HTTP 404
 HTTP 500
 ```
 
-#### ↪️↩️ Com retorno:
+### ↪️↩️ Com retorno:
 
 ```json
 {
