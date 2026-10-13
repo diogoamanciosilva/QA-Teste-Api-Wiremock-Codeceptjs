@@ -202,6 +202,10 @@ https://github.com/user-attachments/assets/59da63ad-e703-4bb5-85b7-7e80aae61ea5
 }
 ```
 
+```powershell
+npx codeceptjs run --grep "Validando veículo inexistente POST 404--verbose"
+```
+
 ### 🟰 Resultado esperado:
 
 ```text
@@ -217,16 +221,11 @@ HTTP 404
 ```
 
 
-```powershell
-npx codeceptjs run --grep "Validando veículo inexistente POST 404--verbose"
-```
-
-
 ## 🎬 **Vídeo:**
-
-
+https://github.com/user-attachments/assets/6818398c-7b8b-45d3-821b-c50749db3b22
 
 ## 📸 **Print:**
+<img width="1902" height="1078" alt="image" src="https://github.com/user-attachments/assets/c0f712a1-33df-49c3-83ef-29531c9c9958" />
 
 
 
