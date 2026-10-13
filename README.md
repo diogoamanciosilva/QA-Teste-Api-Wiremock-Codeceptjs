@@ -167,14 +167,14 @@ npx codeceptjs run --grep "Cadastrando um veículo utilizando POST" --verbose
 HTTP 201
 ```
 
-```
-
 # ↪️↩️ Com retorno:
 
 ```json
 {
-  "message": "Vehicle not found."
+  "message": "Car successfully registered!",
+  "carId": 6
 }
+
 ```
 
 
