@@ -19,6 +19,10 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 - [🏷️ Tecnologias utilizadas](#️-tecnologias-utilizadas)
 - [🤖 O que é testado](#-o-que-é-testado)
 - [📱 Cenários Automatizados](#-cenários-automatizados)
+- [🚙🔍 1. Consulta de veículos](#%EF%B8%8F-1-consulta-de-veículos)
+- [🚘➕ 2. Cadastro de veículo](#%EF%B8%8F-2-cadastro-de-veículo)
+- [🛻⁉️ 3. Cadastro de veículo](#%EF%B8%8F-3--veículo-inexistente)
+- [🛞🚫 3. Cadastro de veículo](#%EF%B8%8F-4-modelo-não-permitido)
 - [📁 Estrutura do projeto](#-estrutura-do-projeto)
 - [⚙️ Instalação e configuração do ambiente](#️-instalação-e-configuração-do-ambiente)
 - [🚀 Execução do projeto](#-execução-do-projeto)
@@ -114,7 +118,7 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 
 # 📲 Cenários automatizados
 
-#  ▶️ 1. Consulta de veículos
+# 🚙🔍 1. Consulta de veículos
 
 ```http
 GET /api/cars
@@ -139,12 +143,9 @@ https://github.com/user-attachments/assets/0b088f0b-6783-4a31-9f99-00118a9f3d53
 # 📸 **Print:**
 <img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/123fec6a-fcc6-4db4-b9d2-99d37f08e671" />
 
-
-
-
 ---
 
-# ▶️ 2. Cadastro de veículo
+# 🚘➕2. Cadastro de veículo
 
 ```json
 {
@@ -177,7 +178,6 @@ HTTP 201
 
 ```
 
-
 # 🎬 **Vídeo:**
 
 https://github.com/user-attachments/assets/59da63ad-e703-4bb5-85b7-7e80aae61ea5
@@ -189,7 +189,7 @@ https://github.com/user-attachments/assets/59da63ad-e703-4bb5-85b7-7e80aae61ea5
 
 ---
 
-# ▶️ 3.  Veículo inexistente
+# 🛻⁉️3.  Veículo inexistente
 
 ```json
 {
@@ -228,11 +228,9 @@ https://github.com/user-attachments/assets/dce451e3-28d3-43c6-8281-65dc52ae6853
 <img width="1916" height="1078" alt="image" src="https://github.com/user-attachments/assets/3c3492e8-05aa-4a79-a36e-d495a8b4695c" />
 
 
-
-
 ---
 
-#  ▶️ 4. Modelo não permitido
+# 🚫🛞4. Modelo não permitido
 
 ```json
 {
