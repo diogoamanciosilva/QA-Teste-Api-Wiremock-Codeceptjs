@@ -126,7 +126,6 @@ GET /api/cars
 ```
 
 
-
 ### 🟰 Resultado esperado:
 
 ```text
@@ -154,10 +153,29 @@ https://github.com/user-attachments/assets/25f694ab-bd95-47bf-8703-c883fcc455b1
 }
 ```
 
+
+```powershell
+npx codeceptjs run --grep "Cadastrando um veículo utilizando POST"
+```
+
+
+
 ### 🟰 Resultado esperado:
 
 ```text
 HTTP 201
+```
+
+
+## 🎬 **Vídeo:**
+
+https://github.com/user-attachments/assets/87de561d-438b-4ece-b121-b4cf024fae06
+
+## 📸 **Print:**
+
+<img width="1917" height="1077" alt="image" src="https://github.com/user-attachments/assets/9646b232-6549-48bc-a99f-fa337bb0e63f" />
+
+
 ```
 
 ### ↪️↩️ Com retorno contendo:
