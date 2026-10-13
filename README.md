@@ -176,6 +176,8 @@ HTTP 201
   "message": "Car successfully registered!",
   "carId": 6
 }
+
+
 ```
 
 # 🎬 **Vídeo:**
