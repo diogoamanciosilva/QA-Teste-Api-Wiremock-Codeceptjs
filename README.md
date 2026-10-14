@@ -200,7 +200,7 @@ https://github.com/user-attachments/assets/59da63ad-e703-4bb5-85b7-7e80aae61ea5
 ```
 
 ```powershell
-npx codeceptjs run --debug --grep "Consulta de veiculos: Validando veículo inexistente POST 404"
+  npx codeceptjs run --debug --grep "Validando veículo inexistente POST 404"
 ```
 
 # 🟰 Resultado esperado:
@@ -255,7 +255,7 @@ HTTP 500
 ```
 
 ```powershell
-npx codeceptjs run --grep "Validando veículo com erro POST 500--verbose"
+  npx codeceptjs run --grep "Validando veículo com erro POST 500" --verbose
 ```
 
 # 🎬 **Vídeo:**
@@ -274,21 +274,26 @@ https://github.com/user-attachments/assets/420f27e6-cfe7-4cfa-a12a-fb5e2a0c7771
 
 ```text
 QA-teste-api-wiremock-codeceptjs/
+├── .github/
+│   └── workflows/
+│       └── api-tests.yml            # Pipeline do GitHub Actions
 ├── backend/                         # Testes automatizados com CodeceptJS
-│   ├── codecept.conf.js             # Configuração do CodeceptJS
-│   ├── package.json                 # Dependências e scripts do projeto
-│   ├── mochawesome-report/          # Relatórios gerados pelo Mochawesome
+│   ├── codecept.conf.js             # Configuração do CodeceptJS (BASE_URL por variável de ambiente)
+│   ├── package.json                 # Dependências e scripts npm
+│   ├── package-lock.json
+│   ├── mochawesome-report/          # Relatório gerado localmente (não versionado)
 │   └── tests/
 │       └── veiculos_teste.js        # Cenários automatizados da API
 ├── mappings/                        # Rotas e respostas simuladas do WireMock
-│   ├── api-cars.json                # GET /api/cars → 200
-│   ├── post-cars.json               # POST /api/cars → 201
-│   ├── post-cars-404.json           # POST /api/cars → 404
-│   └── post-cars-500.json           # POST /api/cars → 500
-├── __files/
-│   └── cars.json                    # Body de resposta do GET /api/cars
+│   ├── get-apicars-a89dc6b6-bc65-4ab4-994d-73c164637b4f.json    # GET /api/cars → 200
+│   ├── post-apicars-eed49bc7-17ee-461e-a3fc-113c1b184593.json   # POST /api/cars (fusca) → 201
+│   ├── post-apicars-5bc9cf4b-2a87-445f-bb75-c8521e4fba62.json   # POST /api/cars (ronaldo) → 404
+│   └── post-apicars-106b2db8-8be1-4269-a84c-b305133842de.json   # POST /api/cars (up tsi) → 500
+├── scripts/
+│   └── download-wiremock.js         # Baixa o .jar do WireMock (Maven Central)
 ├── .gitignore
 └── README.md
+```
 ```
 
 > ⚠️**Importante:** O arquivo `wiremock-standalone-3.9.1.jar` **não está versionado** no repositório por ser um binário pesado. Veja as instruções de download na seção de instalação.
