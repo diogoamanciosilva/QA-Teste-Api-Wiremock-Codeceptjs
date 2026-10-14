@@ -637,7 +637,7 @@ Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhec
 - **Validações básicas:** as verificações se concentram em status code e mensagens de retorno, sem validação de schema, tipos de dados ou tempo de resposta.
 - **Cenários negativos não explorados:** campos ausentes, valores inválidos, body vazio e métodos não suportados ficaram fora desta versão.
 - **Execução manual:** o WireMock e os testes são executados em dois terminais separados. O guia foi validado em ambiente Windows com PowerShell.
-- - **Dependências com alertas do `npm audit`:** o `npm audit` reporta 12 vulnerabilidades (1 baixa, 8 moderadas e 3 altas) em dependências indiretas das ferramentas de teste (CodeceptJS e Mochawesome). A correção automática exige uma versão anterior do CodeceptJS (mudança incompatível), por isso foi adiada. As ferramentas são usadas apenas em ambiente de teste, contra um mock local.
+- **Dependências com alertas do `npm audit`:** o `npm audit` reporta 12 vulnerabilidades (1 baixa, 8 moderadas e 3 altas) em dependências indiretas das ferramentas de teste (CodeceptJS e Mochawesome). A correção automática exige uma versão anterior do CodeceptJS (mudança incompatível), por isso foi adiada. As ferramentas são usadas apenas em ambiente de teste, contra um mock local.
 
 ------------
 
