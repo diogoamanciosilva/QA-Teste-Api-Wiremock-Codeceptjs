@@ -5,7 +5,7 @@ exports.config = {
     output: './output',
     helpers: {
       REST: {
-        endpoint: 'http://localhost:8080',
+        endpoint: process.env.BASE_URL || 'http://localhost:8080',
         defaultHeaders: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
