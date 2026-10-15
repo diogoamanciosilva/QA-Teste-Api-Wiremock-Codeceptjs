@@ -1,5 +1,6 @@
 # 🚗 QA - Testes de API com CodeceptJS e WireMock
 
+[![API Tests](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml/badge.svg?branch=master)](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml)
 
 Projeto de automação de testes de **API desenvolvido com CodeceptJS**, utilizando os **helpers REST e JSONResponse** integrados ao **WireMock** para mock e simulação de serviços.
 
@@ -294,7 +295,6 @@ QA-teste-api-wiremock-codeceptjs/
 ├── .gitignore
 └── README.md
 ```
-```
 
 > ⚠️**Importante:** O arquivo `wiremock-standalone-3.9.1.jar` **não está versionado** no repositório por ser um binário pesado. Veja as instruções de download na seção de instalação.
 
@@ -304,8 +304,9 @@ QA-teste-api-wiremock-codeceptjs/
 | -------------------- | -------------------------------------------------------------------- |
 | `backend/`           | Contém a configuração e os testes do CodeceptJS                      |
 | `backend/tests/`     | Contém os cenários automatizados                                     |
-| `mappings/`          | Define os endpoints, requisições e respostas simuladas pelo WireMock |
-| `__files/`           | Contém os bodies de resposta referenciados pelos mappings            |
+| `mappings/`          | Define os endpoints, requisições e respostas simuladas pelo WireMock (corpos em `jsonBody`) |
+| `scripts/`           | Script que baixa o `.jar` do WireMock, que não é versionado          |
+| `.github/workflows/` | Pipeline de CI que executa os testes e publica o relatório           |
 | `README.md`          | Documentação do projeto                                              |
 
 ---
@@ -651,15 +652,10 @@ Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhec
 
 Evoluções planejadas, da mais simples à mais avançada:
 
-1. **Padronizar a execução local:** criar scripts no `package.json` (por exemplo, `npm run mock` e `npm test`) e definir a URL base por variável de ambiente, em vez de fixá-la no `codecept.conf.js`.
-2. **Dispensar o `.jar` versionado:** subir o WireMock via Docker ou baixar o `.jar` por script, mantendo o repositório mais leve.
-3. **Pipeline com GitHub Actions**, acionado em `push` e `pull request`:
-   - fazer checkout e configurar Node.js e Java;
-   - instalar as dependências (`npm ci`);
-   - iniciar o WireMock em segundo plano e aguardar que ele responda;
-   - executar `npx codeceptjs run`;
-   - publicar o relatório Mochawesome como *artifact* da execução.
-4. **Badge de status** do pipeline no README, para dar visibilidade imediata ao resultado.
+1. ✅ **Execução local padronizada:** scripts no `package.json` (`npm run mock`, `npm test`, `npm run test:report`) e URL base por variável de ambiente (`BASE_URL`).
+2. ✅ **`.jar` fora do repositório:** o WireMock é baixado por script (`npm run mock:setup`).
+3. ✅ **Pipeline com GitHub Actions**, acionado em `push` e `pull request` para a `master`: instala dependências com `npm ci`, sobe o WireMock, executa os testes e publica o relatório Mochawesome como *artifact*.
+4. ✅ **Badge de status** do pipeline no topo do README.
 5. **Ampliar a cobertura:** cenários negativos (campos obrigatórios, tipos e valores inválidos), validação de schema das respostas e uso de *Scenarios* do WireMock para simular estado.
 6. **Revisar os status codes** dos erros de validação, alinhando-os às boas práticas REST (`400`/`422`), e documentar a decisão.
 
@@ -698,6 +694,4 @@ Evoluções planejadas, da mais simples à mais avançada:
 
 | E-mail                   |  diogoamanciosilva@gmail.com/ |
 | ------------------------- | ------: |
-
-
 
