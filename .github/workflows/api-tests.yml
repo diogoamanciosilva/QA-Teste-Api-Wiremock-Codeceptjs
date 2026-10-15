@@ -1,0 +1,81 @@
+name: API Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      WIREMOCK_VERSION: 3.9.1
+      BASE_URL: http://localhost:8080
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Configurar Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Instalar dependências
+        working-directory: backend
+        run: npm ci
+
+      - name: Baixar WireMock
+        run: node scripts/download-wiremock.js
+
+      - name: Iniciar WireMock
+        run: nohup java -jar "wiremock-standalone-${WIREMOCK_VERSION}.jar" --port 8080 > wiremock.log 2>&1 &
+
+      - name: Aguardar WireMock
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:8080/__admin/mappings > /dev/null; then
+              echo "WireMock pronto"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "WireMock não iniciou a tempo"
+          cat wiremock.log
+          exit 1
+
+      - name: Executar testes
+        working-directory: backend
+        run: npm test
+
+      - name: Gerar relatório Mochawesome
+        if: always()
+        continue-on-error: true
+        working-directory: backend
+        run: npm run test:report
+
+      - name: Publicar relatório Mochawesome
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: mochawesome-report
+          path: backend/mochawesome-report
+          if-no-files-found: warn
+
+      - name: Exibir log do WireMock em caso de falha
+        if: failure()
+        run: cat wiremock.log

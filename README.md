@@ -1,5 +1,6 @@
 # 🚗 QA - Testes de API com CodeceptJS e WireMock
 
+[![API Tests](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml/badge.svg?branch=master)](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml)
 
 Projeto de automação de testes de **API desenvolvido com CodeceptJS**, utilizando os **helpers REST e JSONResponse** integrados ao **WireMock** para mock e simulação de serviços.
 
@@ -200,7 +201,7 @@ https://github.com/user-attachments/assets/59da63ad-e703-4bb5-85b7-7e80aae61ea5
 ```
 
 ```powershell
-npx codeceptjs run --debug --grep "Consulta de veiculos: Validando veículo inexistente POST 404"
+  npx codeceptjs run --debug --grep "Validando veículo inexistente POST 404"
 ```
 
 # 🟰 Resultado esperado:
@@ -255,7 +256,7 @@ HTTP 500
 ```
 
 ```powershell
-npx codeceptjs run --grep "Validando veículo com erro POST 500--verbose"
+  npx codeceptjs run --grep "Validando veículo com erro POST 500" --verbose
 ```
 
 # 🎬 **Vídeo:**
@@ -274,19 +275,23 @@ https://github.com/user-attachments/assets/420f27e6-cfe7-4cfa-a12a-fb5e2a0c7771
 
 ```text
 QA-teste-api-wiremock-codeceptjs/
+├── .github/
+│   └── workflows/
+│       └── api-tests.yml            # Pipeline do GitHub Actions
 ├── backend/                         # Testes automatizados com CodeceptJS
-│   ├── codecept.conf.js             # Configuração do CodeceptJS
-│   ├── package.json                 # Dependências e scripts do projeto
-│   ├── mochawesome-report/          # Relatórios gerados pelo Mochawesome
+│   ├── codecept.conf.js             # Configuração do CodeceptJS (BASE_URL por variável de ambiente)
+│   ├── package.json                 # Dependências e scripts npm
+│   ├── package-lock.json
+│   ├── mochawesome-report/          # Relatório gerado localmente (não versionado)
 │   └── tests/
 │       └── veiculos_teste.js        # Cenários automatizados da API
 ├── mappings/                        # Rotas e respostas simuladas do WireMock
-│   ├── api-cars.json                # GET /api/cars → 200
-│   ├── post-cars.json               # POST /api/cars → 201
-│   ├── post-cars-404.json           # POST /api/cars → 404
-│   └── post-cars-500.json           # POST /api/cars → 500
-├── __files/
-│   └── cars.json                    # Body de resposta do GET /api/cars
+│   ├── get-apicars-a89dc6b6-bc65-4ab4-994d-73c164637b4f.json    # GET /api/cars → 200
+│   ├── post-apicars-eed49bc7-17ee-461e-a3fc-113c1b184593.json   # POST /api/cars (fusca) → 201
+│   ├── post-apicars-5bc9cf4b-2a87-445f-bb75-c8521e4fba62.json   # POST /api/cars (ronaldo) → 404
+│   └── post-apicars-106b2db8-8be1-4269-a84c-b305133842de.json   # POST /api/cars (up tsi) → 500
+├── scripts/
+│   └── download-wiremock.js         # Baixa o .jar do WireMock (Maven Central)
 ├── .gitignore
 └── README.md
 ```
@@ -299,8 +304,9 @@ QA-teste-api-wiremock-codeceptjs/
 | -------------------- | -------------------------------------------------------------------- |
 | `backend/`           | Contém a configuração e os testes do CodeceptJS                      |
 | `backend/tests/`     | Contém os cenários automatizados                                     |
-| `mappings/`          | Define os endpoints, requisições e respostas simuladas pelo WireMock |
-| `__files/`           | Contém os bodies de resposta referenciados pelos mappings            |
+| `mappings/`          | Define os endpoints, requisições e respostas simuladas pelo WireMock (corpos em `jsonBody`) |
+| `scripts/`           | Script que baixa o `.jar` do WireMock, que não é versionado          |
+| `.github/workflows/` | Pipeline de CI que executa os testes e publica o relatório           |
 | `README.md`          | Documentação do projeto                                              |
 
 ---
@@ -637,6 +643,7 @@ Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhec
 - **Validações básicas:** as verificações se concentram em status code e mensagens de retorno, sem validação de schema, tipos de dados ou tempo de resposta.
 - **Cenários negativos não explorados:** campos ausentes, valores inválidos, body vazio e métodos não suportados ficaram fora desta versão.
 - **Execução manual:** o WireMock e os testes são executados em dois terminais separados. O guia foi validado em ambiente Windows com PowerShell.
+- **Dependências com alertas do `npm audit`:** o `npm audit` reporta 12 vulnerabilidades (1 baixa, 8 moderadas e 3 altas) em dependências indiretas das ferramentas de teste (CodeceptJS e Mochawesome). A correção automática exige uma versão anterior do CodeceptJS (mudança incompatível), por isso foi adiada. As ferramentas são usadas apenas em ambiente de teste, contra um mock local.
 
 ------------
 
@@ -645,15 +652,10 @@ Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhec
 
 Evoluções planejadas, da mais simples à mais avançada:
 
-1. **Padronizar a execução local:** criar scripts no `package.json` (por exemplo, `npm run mock` e `npm test`) e definir a URL base por variável de ambiente, em vez de fixá-la no `codecept.conf.js`.
-2. **Dispensar o `.jar` versionado:** subir o WireMock via Docker ou baixar o `.jar` por script, mantendo o repositório mais leve.
-3. **Pipeline com GitHub Actions**, acionado em `push` e `pull request`:
-   - fazer checkout e configurar Node.js e Java;
-   - instalar as dependências (`npm ci`);
-   - iniciar o WireMock em segundo plano e aguardar que ele responda;
-   - executar `npx codeceptjs run`;
-   - publicar o relatório Mochawesome como *artifact* da execução.
-4. **Badge de status** do pipeline no README, para dar visibilidade imediata ao resultado.
+1. ✅ **Execução local padronizada:** scripts no `package.json` (`npm run mock`, `npm test`, `npm run test:report`) e URL base por variável de ambiente (`BASE_URL`).
+2. ✅ **`.jar` fora do repositório:** o WireMock é baixado por script (`npm run mock:setup`).
+3. ✅ **Pipeline com GitHub Actions**, acionado em `push` e `pull request` para a `master`: instala dependências com `npm ci`, sobe o WireMock, executa os testes e publica o relatório Mochawesome como *artifact*.
+4. ✅ **Badge de status** do pipeline no topo do README.
 5. **Ampliar a cobertura:** cenários negativos (campos obrigatórios, tipos e valores inválidos), validação de schema das respostas e uso de *Scenarios* do WireMock para simular estado.
 6. **Revisar os status codes** dos erros de validação, alinhando-os às boas práticas REST (`400`/`422`), e documentar a decisão.
 
@@ -692,6 +694,4 @@ Evoluções planejadas, da mais simples à mais avançada:
 
 | E-mail                   |  diogoamanciosilva@gmail.com/ |
 | ------------------------- | ------: |
-
-
 
