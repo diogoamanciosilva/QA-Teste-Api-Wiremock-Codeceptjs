@@ -668,11 +668,11 @@ Evoluções planejadas, da mais simples à mais avançada:
 - **Automação de testes de API com CodeceptJS:** configuração do projeto, escrita de cenários e execução da suíte via `npx codeceptjs run`, incluindo o modo `--verbose` para depuração.
 - **Helpers `REST` e `JSONResponse`:** uso do `REST` para enviar requisições HTTP (`GET` e `POST`) e do `JSONResponse` para validar status code e corpo das respostas. Aprendi na prática que, sem o `JSONResponse` configurado, os métodos de validação, como `seeResponseCodeIs`, não ficam disponíveis.
 - **Configuração de ambiente de testes:** definição da URL base e dos `defaultHeaders` no `codecept.conf.js`, uso de caminhos relativos com barra inicial (`/api/cars`) e a necessidade de manter a porta do WireMock alinhada com o `endpoint` do CodeceptJS.
-- 
+  
 - **Mocking de API com WireMock:** criação de mappings em JSON para simular diferentes respostas de um mesmo endpoint, permitindo testar cenários de sucesso e de erro de forma controlada e sem depender de um backend real.
 - **Cenários positivos e negativos:** validação de respostas `200`, `201`, `404` e `500`, entendendo a importância de testar não só o caminho feliz, mas também o comportamento diante de falhas.
 - **Códigos de status HTTP:** compreensão do significado de cada código e senso crítico sobre sua adequação. Neste projeto, o 404 e o 500 foram usados com finalidade didática, e reconheço que, em uma API real, erros de validação seriam tratados com `400` ou `422`.
-- 
+
 - **Testes exploratórios de API com Postman:** uso do Postman como etapa prévia à automação. Antes de transformar um cenário em teste no CodeceptJS, eu enviava as requisições `GET /api/cars` e `POST /api/cars` manualmente para:
   - confirmar o comportamento esperado do endpoint (método HTTP, payload JSON, status code e mensagem retornada);
   - validar se o WireMock respondia conforme o mapping configurado;
