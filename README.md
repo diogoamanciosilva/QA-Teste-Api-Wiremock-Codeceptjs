@@ -674,9 +674,9 @@ Evoluções planejadas, da mais simples à mais avançada:
 - **Códigos de status HTTP:** compreensão do significado de cada código e senso crítico sobre sua adequação. Neste projeto, o 404 e o 500 foram usados com finalidade didática, e reconheço que, em uma API real, erros de validação seriam tratados com `400` ou `422`.
 
 - **Testes exploratórios de API com Postman:** uso do Postman como etapa prévia à automação. Antes de transformar um cenário em teste no CodeceptJS, eu enviava as requisições `GET /api/cars` e `POST /api/cars` manualmente para:
-  - confirmar o comportamento esperado do endpoint (método HTTP, payload JSON, status code e mensagem retornada);
-  - validar se o WireMock respondia conforme o mapping configurado;
-  - diagnosticar falhas, comparando o resultado manual com o resultado da automação para descobrir se o problema estava no teste, no mock ou no ambiente.
+  - Confirmar o comportamento esperado do endpoint (método HTTP, payload JSON, status code e mensagem retornada);
+  - Validar se o WireMock respondia conforme o mapping configurado;
+  - Diagnosticar falhas, comparando o resultado manual com o resultado da automação para descobrir se o problema estava no teste, no mock ou no ambiente.
  
   Com isso, entendi que o **Postman** complementa a automação, funcionando como ferramenta de exploração, validação e diagnóstico, enquanto o **CodeceptJS** garante a execução repetível e confiável dos cenários.
   
