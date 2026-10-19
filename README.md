@@ -1,8 +1,10 @@
-# 🚗 Testes de API com CodeceptJS e WireMock
+# 🚗 QA - Testes de API com CodeceptJS e WireMock
 
-[![API Tests](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml/badge.svg)](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml)
+[![API Tests](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml/badge.svg?branch=master)](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml)
 
 Projeto de automação de testes de **API** desenvolvido com **CodeceptJS** (helpers `REST` e `JSONResponse`) e executado contra uma API de gerenciamento de veículos simulada com **WireMock**.
+
+A suíte foi organizada para oferecer um ambiente modular, simples e de fácil execução, validando múltiplos comportamentos de uma API REST.
 
 A base didática e a API simulada partem dos conhecimentos adquiridos no curso **Automação de API com JavaScript**, da **Qazando** (https://qazando.com.br), com os professores **Eduardo Finotti** e **Hebert Soares**. Os testes e a estrutura deste repositório foram desenvolvidos por **Diogo Amancio**.
 
@@ -48,7 +50,7 @@ A base didática e a API simulada partem dos conhecimentos adquiridos no curso *
 
 O projeto simula uma **API de gerenciamento de veículos** e usa o **WireMock** para representar o comportamento de um backend, permitindo testar diferentes respostas da API sem depender de um sistema real.
 
-Imagine uma aplicação de veículos que precisa conversar com uma API para consultar e cadastrar veículos. Os testes automatizados simulam as operações que essa aplicação faria:
+Os testes automatizados simulam as operações que um usuário ou sistema cliente faria:
 
 | Cenário | Método | Resposta esperada |
 | :--- | :---: | :--- |
@@ -60,6 +62,17 @@ Imagine uma aplicação de veículos que precisa conversar com uma API para cons
 O **CodeceptJS** envia as requisições e valida as respostas. O **WireMock** atua como o backend simulado, fornecendo respostas previamente configuradas.
 
 > **Em uma frase:** é um projeto de automação de testes de API que simula uma aplicação de gerenciamento de veículos, usando o WireMock como backend simulado e o CodeceptJS para validar automaticamente cenários de sucesso e de erro.
+
+### Jornada do usuário
+
+Imagine uma aplicação de veículos que precisa conversar com uma API para consultar e cadastrar veículos. Cada operação dessa aplicação corresponde a um cenário da suíte:
+
+| Funcionalidade | Método / Status | Validação de comportamento |
+| :--- | :---: | :--- |
+| **Consulta de veículos** | `GET` (`200`) | Retorna a lista de veículos (no mock, um veículo). |
+| **Cadastro de veículo válido** | `POST` (`201`) | Confirma o cadastro com sucesso e retorna o `carId`. |
+| **Recurso inexistente** | `POST` (`404`) | Recusa o cadastro de um veículo não encontrado. |
+| **Erro interno do servidor** | `POST` (`500`) | Valida a resposta diante de um modelo não permitido. |
 
 ### Por que testar contra um mock?
 
@@ -100,9 +113,12 @@ Os testes (`backend/tests/veiculos_teste.js`) validam o endpoint `/api/cars` com
 
 Cada caso traz o cenário em formato BDD, o comando de execução e as evidências (automação com CodeceptJS e validação manual no Postman).
 
+> Execute os comandos de cada caso a partir da pasta `backend/`, com o WireMock em execução (`npm run mock`).
+
 ### CT-01 — Consulta de veículos
 
 ```gherkin
+# language: pt
 Cenário: Consulta de veículos com sucesso
   Dado que a API esteja online e com registros cadastrados
   Quando o cliente enviar uma requisição GET para /api/cars
@@ -139,6 +155,7 @@ https://github.com/user-attachments/assets/76369f5c-6d55-410b-abad-0dc24e388ae4
 ### CT-02 — Cadastro de veículo válido
 
 ```gherkin
+# language: pt
 Cenário: Cadastro de veículo com dados válidos
   Dado que o payload da requisição contenha todos os campos obrigatórios e válidos
   Quando o cliente enviar uma requisição POST para /api/cars
@@ -189,6 +206,7 @@ https://github.com/user-attachments/assets/d6ed52f9-1536-4c3e-9c4c-c939ca61e228
 ### CT-03 — Veículo inexistente
 
 ```gherkin
+# language: pt
 Cenário: Tentativa de cadastro de um modelo de veículo inexistente
   Dado que o payload informe um modelo de veículo não cadastrado
   Quando o cliente enviar uma requisição POST para /api/cars
@@ -238,6 +256,7 @@ https://github.com/user-attachments/assets/53cf60da-51ed-4f51-820b-f6e1c1b8f48f
 ### CT-04 — Modelo não permitido
 
 ```gherkin
+# language: pt
 Cenário: Tentativa de cadastro com modelo não permitido
   Dado que o payload contenha um modelo restrito ou inválido para o sistema
   Quando o cliente enviar uma requisição POST para /api/cars
@@ -292,7 +311,7 @@ QA-teste-api-wiremock-codeceptjs/
 │   └── workflows/
 │       └── api-tests.yml                  # Pipeline de CI (GitHub Actions)
 ├── backend/                               # Testes automatizados com CodeceptJS
-│   ├── codecept.conf.js                   # Configuração do CodeceptJS
+│   ├── codecept.conf.js                   # Configuração do CodeceptJS (BASE_URL por variável de ambiente)
 │   ├── package.json                       # Dependências e scripts npm
 │   ├── package-lock.json                  # Versões exatas das dependências
 │   ├── jsconfig.json                      # Auxiliares gerados pelo CodeceptJS
@@ -301,17 +320,17 @@ QA-teste-api-wiremock-codeceptjs/
 │   └── tests/
 │       └── veiculos_teste.js              # Cenários automatizados da API
 ├── mappings/                              # Respostas simuladas do WireMock
-│   ├── get-apicars-a89dc6b6-….json        # GET  /api/cars              → 200
-│   ├── post-apicars-eed49bc7-….json       # POST /api/cars (fusca)      → 201
-│   ├── post-apicars-5bc9cf4b-….json       # POST /api/cars (ronaldo)    → 404
-│   └── post-apicars-106b2db8-….json       # POST /api/cars (up tsi)     → 500
+│   ├── get-apicars-a89dc6b6-bc65-4ab4-994d-73c164637b4f.json    # GET  /api/cars           → 200
+│   ├── post-apicars-eed49bc7-17ee-461e-a3fc-113c1b184593.json   # POST /api/cars (fusca)   → 201
+│   ├── post-apicars-5bc9cf4b-2a87-445f-bb75-c8521e4fba62.json   # POST /api/cars (ronaldo) → 404
+│   └── post-apicars-106b2db8-8be1-4269-a84c-b305133842de.json   # POST /api/cars (up tsi)  → 500
 ├── scripts/
 │   └── download-wiremock.js               # Download do WireMock (qualquer SO)
 ├── .gitignore
 └── README.md
 ```
 
-> Os nomes dos arquivos em `mappings/` são gerados pelo WireMock (método, rota e um identificador único).
+> Os nomes dos arquivos em `mappings/` são gerados pelo WireMock (método, rota e um identificador único). Os corpos das respostas estão no próprio mapping (`jsonBody`), por isso o projeto não usa a pasta `__files/`.
 
 > ⚠️ **Não versionados:** o `wiremock-standalone-3.9.1.jar` (binário pesado, baixado por script), a pasta `node_modules/` e as pastas geradas pela execução (`backend/output/` e `backend/mochawesome-report/`).
 
@@ -404,7 +423,7 @@ version: 3.9.1
 port: 8080
 ```
 
-> ⚠️ **Não feche este terminal.** O WireMock precisa permanecer em execução durante os testes.
+> ⚠️ **Importante: não feche este terminal.** O WireMock precisa permanecer em execução durante os testes.
 
 <details>
 <summary>🎬 Evidências (vídeo e print)</summary>
@@ -421,6 +440,8 @@ https://github.com/user-attachments/assets/687afc1d-f93b-4820-99ba-f5e9046547e9
 cd backend
 npx codeceptjs run
 ```
+
+> Se o terminal já estiver na pasta `backend`, pule o `cd backend`.
 
 Resultado esperado:
 
@@ -502,11 +523,23 @@ npm test             # Terminal 2: executa a suíte
 
 O `npm run mock` aponta para a pasta `mappings/` da raiz, então pode ser executado de dentro de `backend/`.
 
-A URL base pode ser alterada pela variável de ambiente `BASE_URL`:
+### Usar outra porta
+
+A URL base pode ser alterada pela variável de ambiente `BASE_URL`. Como o `npm run mock` usa a porta `8080`, para outra porta inicie o WireMock manualmente, dentro de `backend/`:
 
 ```powershell
+# Terminal 1: WireMock na porta 9090
+java -jar ..\wiremock-standalone-3.9.1.jar --port 9090 --root-dir ..
+
+# Terminal 2: aponta os testes para a nova porta
 $env:BASE_URL = "http://localhost:9090"
 npm test
+```
+
+A variável vale apenas para a janela atual do PowerShell. Para voltar ao padrão:
+
+```powershell
+Remove-Item Env:BASE_URL
 ```
 
 ---
@@ -592,7 +625,9 @@ Os vídeos da validação manual de cada cenário estão nos casos de teste [CT-
 
 ## 📊 Relatório de testes com Mochawesome
 
-O projeto usa o **Mochawesome** para gerar relatórios visuais das execuções do CodeceptJS. O relatório mostra os cenários executados, os resultados, as falhas e a duração dos testes, o que facilita a análise e a comunicação dos resultados entre QA, desenvolvimento e demais envolvidos.
+O projeto usa o **Mochawesome** para gerar relatórios visuais das execuções do CodeceptJS. O relatório mostra os cenários executados, os resultados, as falhas e a duração dos testes, proporcionando visibilidade, rastreabilidade e facilidade de análise.
+
+Essa prática transforma os resultados da automação em uma evidência estruturada da qualidade da aplicação, facilitando a identificação de falhas e a comunicação dos resultados entre QA, desenvolvimento e demais envolvidos no projeto.
 
 Para gerar o relatório localmente:
 
@@ -614,7 +649,7 @@ https://github.com/user-attachments/assets/d63cd263-7e91-4a78-bfe9-212dab089143
 
 ## 🔁 Integração contínua (GitHub Actions)
 
-A cada `push` ou `pull request` na branch `master`, o workflow [`api-tests.yml`](.github/workflows/api-tests.yml), executado em Ubuntu 24.04 com Node.js 22 e Java 17:
+A cada `push` ou `pull request` na branch `master`, o workflow [`api-tests.yml`](.github/workflows/api-tests.yml) é executado em Ubuntu 24.04, com Node.js 22 e Java 17. Ele também pode ser disparado manualmente, pelo botão *Run workflow* na aba **Actions**. O fluxo:
 
 1. instala as dependências (`npm ci`);
 2. baixa e inicia o WireMock, aguardando que ele responda;
@@ -622,7 +657,7 @@ A cada `push` ou `pull request` na branch `master`, o workflow [`api-tests.yml`]
 4. gera o relatório Mochawesome com `npm run test:report`;
 5. publica o relatório como *artifact* da execução.
 
-O resultado pode ser consultado na aba **Actions** do repositório.
+O resultado pode ser consultado na aba **Actions** do repositório, e o badge no topo deste README mostra o status da última execução na `master`.
 
 ---
 
@@ -630,8 +665,9 @@ O resultado pode ser consultado na aba **Actions** do repositório.
 
 | Sintoma | Causa provável | Solução |
 | :--- | :--- | :--- |
-| Todos os testes falham com `ECONNREFUSED` | WireMock não está em execução, ou está em outra porta | Inicie o WireMock (`npm run mock`) em outro terminal e confira a porta do `endpoint` |
+| Todos os testes falham com `ECONNREFUSED` (testes não conectam à API) | WireMock não está em execução, ou está em outra porta | Inicie o WireMock (`npm run mock`) em outro terminal e confira a porta do `endpoint` |
 | Testes retornam `404` inesperado | WireMock iniciado fora da raiz do projeto, ou payload diferente do mapping | Use `npm run mock`, ou inicie o WireMock na pasta que contém `mappings`; confira se o corpo da requisição é idêntico ao do mapping |
+| Testes com falhas inesperadas | Configuração do WireMock ou do endpoint incorreta | Confira o WireMock, a porta `8080` e o `codecept.conf.js` |
 | `Invalid URL` | URL sem a barra inicial | Use `"/api/cars"` em vez de `"api/cars"` |
 | `I.seeResponseCodeIs is not a function` | Helper `JSONResponse` ausente | Adicione `JSONResponse: {}` na configuração |
 | Porta `8080` em uso | Outro processo está usando a porta | Encerre o processo anterior ou use outra porta e ajuste a variável `BASE_URL` |
@@ -656,6 +692,7 @@ O ambiente está correto quando todas as condições abaixo forem atendidas:
 | **Servidor** | Mock | WireMock iniciado e escutando na porta `8080` |
 | **Execução** | Automação | Os 4 cenários executados sem falhas |
 | **Verificação** | Saída do terminal | Console exibe `OK \| 4 passed` |
+| **Integração contínua** | CI | Workflow `API Tests` concluído com sucesso na aba **Actions** |
 
 ---
 
@@ -705,7 +742,7 @@ Evoluções planejadas, da mais simples à mais avançada:
 
   Com isso, entendi que o **Postman** complementa a automação, funcionando como ferramenta de exploração, validação e diagnóstico, enquanto o **CodeceptJS** garante a execução repetível e confiável dos cenários.
 - **Relatórios de execução:** geração de relatório visual com Mochawesome, facilitando a análise de resultados e a comunicação com outras pessoas do time.
-- **Integração contínua com GitHub Actions:** criação de um workflow que configura Node.js e Java, baixa e inicia o WireMock, aguarda sua disponibilidade, executa a suíte e publica o relatório Mochawesome como *artifact*, além do uso de scripts npm, variáveis de ambiente e versões fixas (Ubuntu 24.04 e actions atualizadas) para tornar a execução reproduzível.
+- **Integração contínua com GitHub Actions:** criação de um workflow que configura Node.js e Java, baixa e inicia o WireMock, aguarda sua disponibilidade, executa a suíte e publica o relatório Mochawesome como *artifact*, além do uso de scripts npm, variáveis de ambiente e versões fixadas por major (Ubuntu 24.04 e actions atualizadas) para tornar a execução reproduzível.
 - **Diagnóstico de problemas:** análise de erros comuns do ambiente (WireMock desligado, que gera `ECONNREFUSED`, WireMock iniciado fora da raiz do projeto, porta em uso, Java ou Node fora do `PATH`, `npm install` executado na pasta errada) e registro das soluções na tabela de *Problemas comuns*.
 - **Segurança de dependências:** leitura do relatório do `npm audit` e decisão consciente de não aplicar `npm audit fix --force`, que instalaria uma versão anterior do CodeceptJS com mudança incompatível, registrando a limitação no projeto.
 - **Organização e documentação:** estruturação do repositório em pastas com responsabilidades claras (`backend/`, `mappings/` e `scripts/`) e escrita de um README com passo a passo reproduzível.
@@ -714,4 +751,6 @@ Evoluções planejadas, da mais simples à mais avançada:
 
 ---
 
+## 📬 Contato
 
+[LinkedIn](https://www.linkedin.com/in/diogoamanciosilva/) · [E-mail](mailto:diogoamanciosilva@gmail.com)
