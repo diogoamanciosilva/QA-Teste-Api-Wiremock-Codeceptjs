@@ -391,7 +391,7 @@ Confirme que o arquivo está na raiz:
 dir *.jar
 ```
 
-> **Alternativa:** depois de instalar as dependências (passo 5), o comando `npm run mock:setup` faz o mesmo download e funciona em qualquer sistema operacional.
+> ⚠️**Alternativa:** depois de instalar as dependências (passo 5), o comando `npm run mock:setup` faz o mesmo download e funciona em qualquer sistema operacional.
 
 ### 📍 5. Instalar as dependências
 
@@ -437,7 +437,7 @@ https://github.com/user-attachments/assets/687afc1d-f93b-4820-99ba-f5e9046547e9
 
 </details>
 
-### 📍 Terminal 2: executar os testes
+### 📍 Terminal 2: Executar os testes
 
 ```powershell
 cd backend
@@ -476,9 +476,11 @@ npx codeceptjs run --verbose
 ```
 
 
-# 🎬 Evidências (Vídeo e Prints)
+# 🎬 Vídeo 
 
 https://github.com/user-attachments/assets/d42b4911-3fe0-478a-b40d-a0d87f9a912e
+
+# 📸 Print:
 
 <img width="1913" height="726" alt="Print da execução em modo detalhado (1)" src="https://github.com/user-attachments/assets/fd32590c-111b-4593-8491-05506732cc38" />
 <img width="1917" height="1078" alt="Print da execução em modo detalhado (2)" src="https://github.com/user-attachments/assets/95789130-b832-4e41-9c18-a71abca4f2c6" />
