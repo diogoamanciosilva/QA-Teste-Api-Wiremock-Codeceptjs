@@ -162,17 +162,7 @@ https://github.com/user-attachments/assets/76369f5c-6d55-410b-abad-0dc24e388ae4
 
 ---
 
-### 🚘➕ CT-02 - Cadastro de veículo válido
-
-```gherkin
-# language: pt
-Cenário: Cadastro de veículo com dados válidos
-  Dado que o payload da requisição contenha todos os campos obrigatórios e válidos
-  Quando o cliente enviar uma requisição POST para /api/cars
-  Então o sistema deve cadastrar o veículo e retornar sucesso
-```
-
-**Requisição:** `POST /api/cars`
+# 🚘➕2. Cadastro de veículo
 
 ```json
 {
@@ -182,48 +172,44 @@ Cenário: Cadastro de veículo com dados válidos
 }
 ```
 
-**Resultado esperado:** `HTTP 201` com o retorno:
+
+```powershell
+npx codeceptjs run --grep "Cadastrando um veículo utilizando POST" --verbose
+```
+
+
+
+# 🟰 Resultado esperado:
+
+```text
+HTTP 201
+```
+
+# ↪️↩️ Com retorno:
 
 ```json
 {
   "message": "Car successfully registered!",
   "carId": 6
 }
+
 ```
 
-```powershell
-npx codeceptjs run --grep "Cadastrando um veículo utilizando POST" --verbose
-```
-
-<details>
-<summary>🎬 Evidências da automação (CodeceptJS)</summary>
+# 🎬 **Vídeo:**
 
 https://github.com/user-attachments/assets/59da63ad-e703-4bb5-85b7-7e80aae61ea5
 
-<img width="1917" height="1078" alt="Print da execução do CT-02" src="https://github.com/user-attachments/assets/e6d0b498-488c-49a4-ad6c-c7ddbe97a483" />
 
-</details>
+# 📸 **Print:**
 
-<details>
-<summary>🔭 Evidência da validação manual (Postman)</summary>
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/e6d0b498-488c-49a4-ad6c-c7ddbe97a483" />
+
+# 🔭 Evidência da validação manual (Postman)
 
 https://github.com/user-attachments/assets/d6ed52f9-1536-4c3e-9c4c-c939ca61e228
 
-</details>
-
 ---
-
-### 🛻⁉️ CT-03  - Veículo inexistente
-
-```gherkin
-# language: pt
-Cenário: Tentativa de cadastro de um modelo de veículo inexistente
-  Dado que o payload informe um modelo de veículo não cadastrado
-  Quando o cliente enviar uma requisição POST para /api/cars
-  Então o sistema deve recusar o cadastro e informar que o veículo não foi encontrado
-```
-
-**Requisição:** `POST /api/cars`
+# 🛻⁉️3.  Veículo inexistente
 
 ```json
 {
@@ -233,7 +219,17 @@ Cenário: Tentativa de cadastro de um modelo de veículo inexistente
 }
 ```
 
-**Resultado esperado:** `HTTP 404` com o retorno:
+```powershell
+  npx codeceptjs run --debug --grep "Validando veículo inexistente POST 404"
+```
+
+# 🟰 Resultado esperado:
+
+```text
+HTTP 404
+```
+
+# ↪️↩️ Com retorno:
 
 ```json
 {
@@ -241,39 +237,23 @@ Cenário: Tentativa de cadastro de um modelo de veículo inexistente
 }
 ```
 
-```powershell
-npx codeceptjs run --grep "Validando veículo inexistente POST 404" --verbose
-```
 
-<details>
-<summary>🎬 Evidências da automação (CodeceptJS)</summary>
+# 🎬 **Vídeo:**
 
 https://github.com/user-attachments/assets/dce451e3-28d3-43c6-8281-65dc52ae6853
 
-<img width="1916" height="1078" alt="Print da execução do CT-03" src="https://github.com/user-attachments/assets/3c3492e8-05aa-4a79-a36e-d495a8b4695c" />
 
-</details>
+# 📸 **Print:**
+<img width="1916" height="1078" alt="image" src="https://github.com/user-attachments/assets/3c3492e8-05aa-4a79-a36e-d495a8b4695c" />
 
-<details>
-<summary>🔭 Evidência da validação manual (Postman)</summary>
+
+# 🔭 Evidência da validação manual (Postman)
 
 https://github.com/user-attachments/assets/53cf60da-51ed-4f51-820b-f6e1c1b8f48f
 
-</details>
-
 ---
 
-### 🛞🚫 CT-04 - Modelo não permitido
-
-```gherkin
-# language: pt
-Cenário: Tentativa de cadastro com modelo não permitido
-  Dado que o payload contenha um modelo restrito ou inválido para o sistema
-  Quando o cliente enviar uma requisição POST para /api/cars
-  Então o servidor deve retornar uma falha interna
-```
-
-**Requisição:** `POST /api/cars`
+# 🚫🛞4. Modelo não permitido
 
 ```json
 {
@@ -283,7 +263,13 @@ Cenário: Tentativa de cadastro com modelo não permitido
 }
 ```
 
-**Resultado esperado:** `HTTP 500` com o retorno:
+# 🟰 Resultado esperado:
+
+```text
+HTTP 500
+```
+
+# ↪️↩️ Com retorno:
 
 ```json
 {
@@ -292,16 +278,17 @@ Cenário: Tentativa de cadastro com modelo não permitido
 ```
 
 ```powershell
-npx codeceptjs run --grep "Validando veículo com erro POST 500" --verbose
+  npx codeceptjs run --grep "Validando veículo com erro POST 500" --verbose
 ```
 
-
-# 🎬 Evidências da automação (CodeceptJS)
+# 🎬 **Vídeo:**
 
 https://github.com/user-attachments/assets/420f27e6-cfe7-4cfa-a12a-fb5e2a0c7771
 
-<img width="1917" height="1078" alt="Print da execução do CT-04" src="https://github.com/user-attachments/assets/d6606bac-091d-4f32-b1e0-8a676bb73c10" />
 
+# 📸 **Print:**
+
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/d6606bac-091d-4f32-b1e0-8a676bb73c10" />
 
 
 # 🔭 Evidência da validação manual (Postman)
