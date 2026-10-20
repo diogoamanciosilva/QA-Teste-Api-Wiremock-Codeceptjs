@@ -25,24 +25,25 @@ A base didática e a API simulada partem dos conhecimentos adquiridos no curso *
 
 ## 📑 Índice
 
-- [Sobre o projeto](#-sobre-o-projeto)
-- [Tecnologias](#-tecnologias)
-- [Casos de teste](#-casos-de-teste)
-- [Estrutura do projeto](#-estrutura-do-projeto)
-- [Instalação e configuração do ambiente](#-instalação-e-configuração-do-ambiente)
-- [Execução do projeto](#-execução-do-projeto)
-- [Execução simplificada (scripts npm)](#-execução-simplificada-scripts-npm)
-- [Configuração do CodeceptJS](#-configuração-do-codeceptjs)
-- [Como o WireMock funciona neste projeto](#-como-o-wiremock-funciona-neste-projeto)
-- [Postman](#-postman)
-- [Relatório de testes com Mochawesome](#-relatório-de-testes-com-mochawesome)
-- [Integração contínua (GitHub Actions)](#-integração-contínua-github-actions)
-- [Problemas comuns](#-problemas-comuns)
-- [Validação do ambiente](#-validação-do-ambiente)
-- [Limitações e escopo](#-limitações-e-escopo)
-- [Próximos passos](#-próximos-passos)
-- [Aprendizados técnicos](#-aprendizados-técnicos)
-- [Contato](#-contato)
+- [📌 Sobre o projeto](#-sobre-o-projeto)
+- [🧰 Tecnologias](#-tecnologias)
+- [🧭 Jornada do usuário](#jornada-do-usuário)
+- [🧪 Casos de teste](#-casos-de-teste)
+- [📁 Estrutura do projeto](#-estrutura-do-projeto)
+- [🔧 Instalação e configuração do ambiente](#-instalação-e-configuração-do-ambiente)
+- [🚀 Execução do projeto](#-execução-do-projeto)
+- [⚡ Execução simplificada (scripts npm)](#-execução-simplificada-scripts-npm)
+- [🔩 Configuração do CodeceptJS](#-configuração-do-codeceptjs)
+- [🧩 Como o WireMock funciona neste projeto](#-como-o-wiremock-funciona-neste-projeto)
+- [🔭 Postman](#-postman)
+- [📊 Relatório de testes com Mochawesome](#-relatório-de-testes-com-mochawesome)
+- [🔁 Integração contínua (GitHub Actions)](#-integração-contínua-github-actions)
+- [🐞 Problemas comuns](#-problemas-comuns)
+- [✅ Validação do ambiente](#-validação-do-ambiente)
+- [🚧 Limitações e escopo](#-limitações-e-escopo)
+- [🎯 Próximos passos](#-próximos-passos)
+- [💡 Aprendizados técnicos](#-aprendizados-técnicos)
+- [📬 Contato](#-contato)
 
 ---
 
@@ -63,7 +64,7 @@ O **CodeceptJS** envia as requisições e valida as respostas. O **WireMock** at
 
 > **Em uma frase:** é um projeto de automação de testes de API que simula uma aplicação de gerenciamento de veículos, usando o WireMock como backend simulado e o CodeceptJS para validar automaticamente cenários de sucesso e de erro.
 
-### Jornada do usuário
+## 🧭 Jornada do usuário
 
 Imagine uma aplicação de veículos que precisa conversar com uma API para consultar e cadastrar veículos. Cada operação dessa aplicação corresponde a um cenário da suíte:
 
