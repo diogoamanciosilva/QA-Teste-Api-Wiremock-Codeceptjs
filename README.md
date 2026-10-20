@@ -299,7 +299,7 @@ https://github.com/user-attachments/assets/41e2e5ef-0b70-4623-a24e-5e31b2a15d8c
 
 ---
 
-## 📁 Estrutura do projeto
+# 📁 Estrutura do projeto
 
 ```text
 QA-teste-api-wiremock-codeceptjs/
@@ -400,7 +400,7 @@ npm install
 
 ---
 
-## 🚀 Execução do projeto
+# 🚀 Execução do projeto
 
 A execução envolve dois processos em paralelo, então use **duas janelas do PowerShell**.
 
@@ -497,7 +497,7 @@ https://github.com/user-attachments/assets/d42b4911-3fe0-478a-b40d-a0d87f9a912e
 
 ---
 
-## ⚡ Execução simplificada (scripts npm)
+# ⚡ Execução simplificada (scripts npm)
 
 Os scripts do `backend/package.json` simplificam a execução:
 
@@ -540,7 +540,7 @@ Remove-Item Env:BASE_URL
 
 ---
 
-## 🔩 Configuração do CodeceptJS
+# 🔩 Configuração do CodeceptJS
 
 ```javascript
 helpers: {
@@ -561,7 +561,7 @@ O `endpoint` usa a variável de ambiente `BASE_URL`. Quando ela não está defin
 
 ---
 
-## 🧩 Como o WireMock funciona neste projeto
+# 🧩 Como o WireMock funciona neste projeto
 
 O WireMock carrega os arquivos JSON da pasta `mappings/` e responde às requisições conforme as regras definidas neles.
 
@@ -605,7 +605,7 @@ Exemplo simplificado do mapping do cenário `404`:
 
 ---
 
-## 🔭 Postman
+# 🔭 Postman
 
 O Postman complementa a automação como ferramenta de exploração e validação manual:
 
@@ -619,7 +619,7 @@ Os vídeos da validação manual de cada cenário estão nos casos de teste [CT-
 
 ---
 
-## 📊 Relatório de testes com Mochawesome
+# 📊 Relatório de testes com Mochawesome
 
 O projeto usa o **Mochawesome** para gerar relatórios visuais das execuções do CodeceptJS. O relatório mostra os cenários executados, os resultados, as falhas e a duração dos testes, proporcionando visibilidade, rastreabilidade e facilidade de análise.
 
@@ -643,7 +643,7 @@ https://github.com/user-attachments/assets/d63cd263-7e91-4a78-bfe9-212dab089143
 
 ---
 
-## 🔁 Integração contínua (GitHub Actions)
+# 🔁 Integração contínua (GitHub Actions)
 
 A cada `push` ou `pull request` na branch `master`, o workflow [`api-tests.yml`](.github/workflows/api-tests.yml) é executado em Ubuntu 24.04, com Node.js 22 e Java 17. Ele também pode ser disparado manualmente, pelo botão *Run workflow* na aba **Actions**. O fluxo:
 
@@ -657,7 +657,7 @@ O resultado pode ser consultado na aba **Actions** do repositório, e o badge no
 
 ---
 
-## 🐞 Problemas comuns
+# 🐞 Problemas comuns
 
 | Sintoma | Causa provável | Solução |
 | :--- | :--- | :--- |
@@ -675,7 +675,7 @@ O resultado pode ser consultado na aba **Actions** do repositório, e o badge no
 
 ---
 
-## ✅ Validação do ambiente
+# ✅ Validação do ambiente
 
 O ambiente está correto quando todas as condições abaixo forem atendidas:
 
@@ -692,7 +692,7 @@ O ambiente está correto quando todas as condições abaixo forem atendidas:
 
 ---
 
-## 🚧 Limitações e escopo
+# 🚧 Limitações e escopo
 
 Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhecimentos do curso *Automação de API com JavaScript*. As limitações abaixo são conhecidas e fazem parte do escopo definido.
 
@@ -707,7 +707,7 @@ Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhec
 
 ---
 
-## 🎯 Próximos passos
+# 🎯 Próximos passos
 
 ✅ **Concluído:** scripts npm, URL base por variável de ambiente, download automatizado do WireMock e pipeline no GitHub Actions com relatório Mochawesome e badge de status.
 
@@ -723,7 +723,7 @@ Evoluções planejadas, da mais simples à mais avançada:
 
 ---
 
-## 💡 Aprendizados técnicos
+# 💡 Aprendizados técnicos
 
 - **Automação de testes de API com CodeceptJS:** configuração do projeto, escrita de cenários e execução da suíte via `npx codeceptjs run`, incluindo o modo `--verbose` para depuração.
 - **Helpers `REST` e `JSONResponse`:** uso do `REST` para enviar requisições HTTP (`GET` e `POST`) e do `JSONResponse` para validar status code e corpo das respostas. Aprendi na prática que, sem o `JSONResponse` configurado, os métodos de validação, como `seeResponseCodeIs`, não ficam disponíveis.
@@ -748,7 +748,7 @@ Evoluções planejadas, da mais simples à mais avançada:
 
 ---
 
-## 📬 Contato
+# 📬 Contato
 
 | LinkedIn                   |  https://www.linkedin.com/in/diogoamanciosilva/ |
 | ------------------------- | ------: |
