@@ -341,7 +341,7 @@ QA-teste-api-wiremock-codeceptjs/
 
 ---
 
-## 🔧 Instalação e configuração do ambiente
+# 🔧 Instalação e configuração do ambiente
 
 O procedimento foi validado em ambiente **Windows com PowerShell**.
 
