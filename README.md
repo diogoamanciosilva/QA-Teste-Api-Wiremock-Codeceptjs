@@ -754,4 +754,9 @@ Evoluções planejadas, da mais simples à mais avançada:
 
 ## 📬 Contato
 
-[LinkedIn](https://www.linkedin.com/in/diogoamanciosilva/) · [E-mail](mailto:diogoamanciosilva@gmail.com)
+| LinkedIn                   |  https://www.linkedin.com/in/diogoamanciosilva/ |
+| ------------------------- | ------: |
+
+| E-mail                   |  diogoamanciosilva@gmail.com/ |
+| ------------------------- | ------: |
+
