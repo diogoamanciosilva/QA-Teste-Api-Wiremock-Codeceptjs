@@ -10,15 +10,7 @@ A base didática e API Simulada com base nos conhecimentos adquiridos no curso *
 
 Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo Amancio**.
 
-
-| Item | Detalhe |
-| :--- | :--- |
-| **Foco** | Automação de testes de API |
-| **Stack** | CodeceptJS 4 (REST + JSONResponse), WireMock 3.9.1, Node.js, Java, Postman, Mochawesome, GitHub Actions |
-| **Endpoint testado** | `/api/cars` |
-| **Cobertura** | 4 cenários: `GET` 200 · `POST` 201 · `POST` 404 · `POST` 500 |
-| **Resultado esperado** | `OK \| 4 passed` |
-| **Ambiente validado** | Windows com PowerShell (local) e Ubuntu 24.04 (GitHub Actions) |
+<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
 
 
 ---
@@ -86,7 +78,14 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 
 É um projeto de automação de testes de API que simula uma aplicação de gerenciamento de veículos, utilizando o WireMock como backend simulado e o CodeceptJS para validar automaticamente cenários de sucesso e diferentes condições de erro.
 
-<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
+| Item | Detalhe |
+| :--- | :--- |
+| **Foco** | Automação de testes de API |
+| **Stack** | CodeceptJS 4 (REST + JSONResponse), WireMock 3.9.1, Node.js, Java, Postman, Mochawesome, GitHub Actions |
+| **Endpoint testado** | `/api/cars` |
+| **Cobertura** | 4 cenários: `GET` 200 · `POST` 201 · `POST` 404 · `POST` 500 |
+| **Resultado esperado** | `OK \| 4 passed` |
+| **Ambiente validado** | Windows com PowerShell (local) e Ubuntu 24.04 (GitHub Actions) |
 
 # 🏹 Por que testar contra um mock?
 
