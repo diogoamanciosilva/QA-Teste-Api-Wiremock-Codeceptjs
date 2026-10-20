@@ -111,7 +111,7 @@ O WireMock permite reproduzir respostas `200`, `201`, `404` e `500` de forma con
 
 ---
 
-## 🧪 Casos de teste
+# 🧪 Casos de teste
 
 Os testes (`backend/tests/veiculos_teste.js`) validam o endpoint `/api/cars` com quatro cenários:
 
