@@ -26,7 +26,7 @@ A base didática e a API simulada partem dos conhecimentos adquiridos no curso *
 
 - [📌 Sobre o projeto](#-sobre-o-projeto)
 - [🧰 Tecnologias](#-tecnologias)
-- [🧭 Jornada do usuário](#jornada-do-usuário)
+- [🧭 Jornada do usuário](#-jornada-do-usuário)
 - [🧪 Casos de teste](#-casos-de-teste)
 - [📁 Estrutura do projeto](#-estrutura-do-projeto)
 - [🔧 Instalação e configuração do ambiente](#-instalação-e-configuração-do-ambiente)
