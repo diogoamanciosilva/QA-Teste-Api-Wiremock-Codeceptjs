@@ -63,6 +63,7 @@ Na prática, os testes automatizados simulam operações que um usuário ou sist
 | **Requisições de recursos inexistentes** | `POST` / `GET` | `404 Not Found` |
 
 👉🏻 O **CodeceptJS** envia as requisições e valida se a API retorna exatamente o comportamento esperado. 
+
 👉🏻 O **WireMock** atua como o backend simulado, fornecendo respostas previamente configuradas.
 
 
