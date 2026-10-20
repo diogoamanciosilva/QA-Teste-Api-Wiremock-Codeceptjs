@@ -127,14 +127,35 @@ Cada caso traz o cenário em formato BDD, o comando de execução e as evidênci
 > ⚠️**Importante:** Execute os comandos de cada caso a partir da pasta `backend/`, com o WireMock em execução (`npm run mock`).
 
 
+# 📲 Cenários automatizados
+
+# 🚙🔍 1. Consulta de veículos
+
+```http
+GET /api/cars
+```
 
 
+```powershell
+  npx codeceptjs run --grep "Fazendo um GET para o endpoint" --verbose
+```
 
 
+# 🟰 Resultado esperado:
+
+```text
+HTTP 200
+```
+
+# 🎬 **Vídeo:**
+https://github.com/user-attachments/assets/0b088f0b-6783-4a31-9f99-00118a9f3d53
 
 
+# 📸 **Print:**
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/123fec6a-fcc6-4db4-b9d2-99d37f08e671" />
 
-🔭 Evidência da validação manual (Postman)
+
+# 🔭 Evidência da validação manual (Postman)
 
 https://github.com/user-attachments/assets/76369f5c-6d55-410b-abad-0dc24e388ae4
 
