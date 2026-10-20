@@ -49,7 +49,7 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 
 ---
 
-## 📌 Sobre o projeto
+# 📌 Sobre o projeto
 
 O projeto simula uma **API de gerenciamento de veículo**s e utiliza o **WireMock** para representar o **comportamento de um backend real**, permitindo testar diferentes respostas da API sem depender de um sistema de produção.
 
