@@ -126,40 +126,18 @@ Cada caso traz o cenário em formato BDD, o comando de execução e as evidênci
 
 > ⚠️**Importante:** Execute os comandos de cada caso a partir da pasta `backend/`, com o WireMock em execução (`npm run mock`).
 
-### 🚙🔍 CT-01 - Consulta de veículos
 
-```gherkin
-# language: pt
-Cenário: Consulta de veículos com sucesso
-  Dado que a API esteja online e com registros cadastrados
-  Quando o cliente enviar uma requisição GET para /api/cars
-  Então o sistema deve responder com sucesso (HTTP 200)
-```
 
-**Requisição:** `GET /api/cars`
-**Resultado esperado:** `HTTP 200`
 
-> O mock devolve uma lista com um veículo (`volks`, `gol`, `2018`). Nesta versão, o teste valida o status da resposta. A validação do corpo está nos [próximos passos](#-próximos-passos).
 
-```powershell
-npx codeceptjs run --grep "Fazendo um GET para o endpoint" --verbose
-```
 
-<details>
-<summary>🎬 Evidências da automação (CodeceptJS)</summary>
 
-https://github.com/user-attachments/assets/0b088f0b-6783-4a31-9f99-00118a9f3d53
 
-<img width="1917" height="1078" alt="Print da execução do CT-01" src="https://github.com/user-attachments/assets/123fec6a-fcc6-4db4-b9d2-99d37f08e671" />
 
-</details>
-
-<details>
-<summary>🔭 Evidência da validação manual (Postman)</summary>
+🔭 Evidência da validação manual (Postman)
 
 https://github.com/user-attachments/assets/76369f5c-6d55-410b-abad-0dc24e388ae4
 
-</details>
 
 ---
 
