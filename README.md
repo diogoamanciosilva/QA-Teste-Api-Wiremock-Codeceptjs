@@ -17,7 +17,6 @@ A base didática e a API simulada partem dos conhecimentos adquiridos no curso *
 | **Resultado esperado** | `OK \| 4 passed` |
 | **Ambiente validado** | Windows com PowerShell (local) e Ubuntu 24.04 (GitHub Actions) |
 
-📬 **Contato:** [LinkedIn](https://www.linkedin.com/in/diogoamanciosilva/) · [E-mail](mailto:diogoamanciosilva@gmail.com)
 
 <img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
 
