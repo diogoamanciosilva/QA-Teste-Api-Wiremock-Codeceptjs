@@ -67,7 +67,7 @@ Na prática, os testes automatizados simulam operações que um usuário ou sist
 👉🏻 O **WireMock** atua como o backend simulado, fornecendo respostas previamente configuradas.
 
 
-## 🧭 Jornada do usuário
+# 🧭 Jornada do usuário
 
 Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa aplicação precisa conversar com uma API para consultar e cadastrar veículos.
 
