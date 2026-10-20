@@ -115,7 +115,7 @@ Cada caso traz o cenário em formato BDD, o comando de execução e as evidênci
 
 > Execute os comandos de cada caso a partir da pasta `backend/`, com o WireMock em execução (`npm run mock`).
 
-### 🚙🔍 CT-01 — Consulta de veículos
+### 🚙🔍 CT-01 - Consulta de veículos
 
 ```gherkin
 # language: pt
@@ -152,7 +152,7 @@ https://github.com/user-attachments/assets/76369f5c-6d55-410b-abad-0dc24e388ae4
 
 ---
 
-### 🚘➕ CT-02 — Cadastro de veículo válido
+### 🚘➕ CT-02 - Cadastro de veículo válido
 
 ```gherkin
 # language: pt
@@ -203,7 +203,7 @@ https://github.com/user-attachments/assets/d6ed52f9-1536-4c3e-9c4c-c939ca61e228
 
 ---
 
-### 🛻⁉️ CT-03 — Veículo inexistente
+### 🛻⁉️ CT-03  - Veículo inexistente
 
 ```gherkin
 # language: pt
@@ -253,7 +253,7 @@ https://github.com/user-attachments/assets/53cf60da-51ed-4f51-820b-f6e1c1b8f48f
 
 ---
 
-### 🛞🚫 CT-04 — Modelo não permitido
+### 🛞🚫 CT-04 - Modelo não permitido
 
 ```gherkin
 # language: pt
