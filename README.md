@@ -460,7 +460,6 @@ Consulta de veiculos --
 ```
 
 
-
 # 🎬 Vídeo:
 https://github.com/user-attachments/assets/4b4bad36-0754-4fd1-8218-c17393b2b952
 
@@ -476,7 +475,7 @@ npx codeceptjs run --verbose
 ```
 
 
-# 🎬 Vídeo 
+# 🎬 Vídeo:
 
 https://github.com/user-attachments/assets/d42b4911-3fe0-478a-b40d-a0d87f9a912e
 
@@ -644,12 +643,11 @@ npm run test:report
 
 Os arquivos são criados em `backend/mochawesome-report/` (`mochawesome.html` e `mochawesome.json`). Essa pasta é gerada a cada execução e não é versionada. Nas execuções do GitHub Actions, o relatório fica disponível como *artifact* chamado `mochawesome-report`, na página da execução.
 
-<details>
-<summary>🎬 Evidência (vídeo)</summary>
+
+# 🎬 Vídeo:
 
 https://github.com/user-attachments/assets/d63cd263-7e91-4a78-bfe9-212dab089143
 
-</details>
 
 ---
 
