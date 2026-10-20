@@ -2,11 +2,14 @@
 
 [![API Tests](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml/badge.svg?branch=master)](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml)
 
-Projeto de automação de testes de **API** desenvolvido com **CodeceptJS** (helpers `REST` e `JSONResponse`) e executado contra uma API de gerenciamento de veículos simulada com **WireMock**.
+Projeto de automação de testes de **API desenvolvido com CodeceptJS**, utilizando os **helpers REST e JSONResponse** integrados ao **WireMock** para mock e simulação de serviços.
 
-A suíte foi organizada para oferecer um ambiente modular, simples e de fácil execução, validando múltiplos comportamentos de uma API REST.
+A suíte foi organizada para oferecer um ambiente modular, simples e de fácil execução, validando múltiplos comportamentos de uma API REST. 
 
-A base didática e a API simulada partem dos conhecimentos adquiridos no curso **Automação de API com JavaScript**, da **Qazando** (https://qazando.com.br), com os professores **Eduardo Finotti** e **Hebert Soares**. Os testes e a estrutura deste repositório foram desenvolvidos por **Diogo Amancio**.
+A base didática e API Simulada com base nos conhecimentos adquiridos no curso **Automação API com JavaScript**, desenvolvida pela **Qazando** (https://qazando.com.br), **Professores Eduardo Finotti e Hebert Soares.**
+
+Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo Amancio**.
+
 
 | Item | Detalhe |
 | :--- | :--- |
