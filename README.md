@@ -80,7 +80,7 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 
 # 🎯 Objetivo da Automação
 
-> É um projeto de automação de testes de API que simula uma aplicação de gerenciamento de veículos, utilizando o WireMock como backend simulado e o CodeceptJS para validar automaticamente cenários de sucesso e diferentes condições de erro.
+É um projeto de automação de testes de API que simula uma aplicação de gerenciamento de veículos, utilizando o WireMock como backend simulado e o CodeceptJS para validar automaticamente cenários de sucesso e diferentes condições de erro.
 
 
 # 🏹 Por que testar contra um mock?
