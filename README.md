@@ -21,8 +21,6 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 | **Ambiente validado** | Windows com PowerShell (local) e Ubuntu 24.04 (GitHub Actions) |
 
 
-<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
-
 ---
 
 ## 📑 Índice
@@ -30,6 +28,7 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 - [📌 Sobre o projeto](#-sobre-o-projeto)
 - [🧰 Tecnologias](#-tecnologias)
 - [🧭 Jornada do usuário](#-jornada-do-usuário)
+- [🎯 Objetivo da Automação](#-objetivo-da-automação)
 - [🧪 Casos de teste](#-casos-de-teste)
 - [📁 Estrutura do projeto](#-estrutura-do-projeto)
 - [🔧 Instalação e configuração do ambiente](#-instalação-e-configuração-do-ambiente)
@@ -82,6 +81,7 @@ Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa apli
 
 É um projeto de automação de testes de API que simula uma aplicação de gerenciamento de veículos, utilizando o WireMock como backend simulado e o CodeceptJS para validar automaticamente cenários de sucesso e diferentes condições de erro.
 
+<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
 
 # 🏹 Por que testar contra um mock?
 
