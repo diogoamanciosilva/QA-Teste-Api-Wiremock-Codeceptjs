@@ -657,11 +657,13 @@ https://github.com/user-attachments/assets/d63cd263-7e91-4a78-bfe9-212dab089143
 
 A cada `push` ou `pull request` na branch `master`, o workflow [`api-tests.yml`](.github/workflows/api-tests.yml) é executado em Ubuntu 24.04, com Node.js 22 e Java 17. Ele também pode ser disparado manualmente, pelo botão *Run workflow* na aba **Actions**. O fluxo:
 
-1. instala as dependências (`npm ci`);
-2. baixa e inicia o WireMock, aguardando que ele responda;
-3. executa a suíte com `npm test`;
-4. gera o relatório Mochawesome com `npm run test:report`;
-5. publica o relatório como *artifact* da execução.
+| Passo / Ação | Comando / Ferramenta | Descrição / Observação |
+| :--- | :---: | :--- |
+| **1. Instalação** | `npm ci` | Instala as dependências do projeto |
+| **2. Inicialização** | WireMock | Baixa e inicia o WireMock, aguardando que ele responda |
+| **3. Execução** | `npm test` | Executa a suíte de testes |
+| **4. Relatório** | `npm run test:report` | Gera o relatório Mochawesome |
+| **5. Publicação** | Artifact | Publica o relatório como *artifact* da execução |
 
 O resultado pode ser consultado na aba **Actions** do repositório, e o badge no topo deste README mostra o status da última execução na `master`.
 
