@@ -457,14 +457,13 @@ Consulta de veiculos --
   OK  | 4 passed
 ```
 
-<details>
-<summary>🎬 Evidências (vídeo e print)</summary>
+
+# 🎬 Evidências (Vídeo e Print)
 
 https://github.com/user-attachments/assets/4b4bad36-0754-4fd1-8218-c17393b2b952
 
 <img width="1917" height="1078" alt="Print da execução da suíte" src="https://github.com/user-attachments/assets/1428239d-7ac0-4951-97da-bf10e507f3c0" />
 
-</details>
 
 ### 📍 Modo detalhado
 
@@ -472,8 +471,8 @@ https://github.com/user-attachments/assets/4b4bad36-0754-4fd1-8218-c17393b2b952
 npx codeceptjs run --verbose
 ```
 
-<details>
-<summary>🎬 Evidências (vídeo e prints)</summary>
+
+# 🎬 Evidências (Vídeo e Prints)
 
 https://github.com/user-attachments/assets/d42b4911-3fe0-478a-b40d-a0d87f9a912e
 
@@ -524,7 +523,7 @@ npm test             # Terminal 2: executa a suíte
 
 O `npm run mock` aponta para a pasta `mappings/` da raiz, então pode ser executado de dentro de `backend/`.
 
-### Usar outra porta
+### 📍 Usar outra porta
 
 A URL base pode ser alterada pela variável de ambiente `BASE_URL`. Como o `npm run mock` usa a porta `8080`, para outra porta inicie o WireMock manualmente, dentro de `backend/`:
 
@@ -537,7 +536,7 @@ $env:BASE_URL = "http://localhost:9090"
 npm test
 ```
 
-A variável vale apenas para a janela atual do PowerShell. Para voltar ao padrão:
+> ⚠️ **Importante:** A variável vale apenas para a janela atual do PowerShell. Para voltar ao padrão:
 
 ```powershell
 Remove-Item Env:BASE_URL
