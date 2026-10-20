@@ -331,7 +331,7 @@ QA-teste-api-wiremock-codeceptjs/
 └── README.md
 ```
 
-> Os nomes dos arquivos em `mappings/` são gerados pelo WireMock (método, rota e um identificador único). Os corpos das respostas estão no próprio mapping (`jsonBody`), por isso o projeto não usa a pasta `__files/`.
+> ⚠️**Importante:** > Os nomes dos arquivos em `mappings/` são gerados pelo WireMock (método, rota e um identificador único). Os corpos das respostas estão no próprio mapping (`jsonBody`), por isso o projeto não usa a pasta `__files/`.
 
 > ⚠️ **Não versionados:** o `wiremock-standalone-3.9.1.jar` (binário pesado, baixado por script), a pasta `node_modules/` e as pastas geradas pela execução (`backend/output/` e `backend/mochawesome-report/`).
 
@@ -350,7 +350,7 @@ QA-teste-api-wiremock-codeceptjs/
 
 O procedimento foi validado em ambiente **Windows com PowerShell**.
 
-### 1. Pré-requisitos
+### 📍 1. Pré-requisitos
 
 | Ferramenta | Finalidade |
 | :--- | :--- |
@@ -360,7 +360,7 @@ O procedimento foi validado em ambiente **Windows com PowerShell**.
 | **Java JDK** | Executar o WireMock (o pipeline usa Java 17) |
 | **PowerShell** | Executar os comandos deste guia |
 
-### 2. Verificar as instalações
+### 📍 2. Verificar as instalações
 
 ```powershell
 git --version
@@ -369,16 +369,16 @@ npm --version
 java -version
 ```
 
-> **Importante:** caso algum comando não seja reconhecido, instale a ferramenta e configure-a no `PATH` do sistema antes de continuar.
+> ⚠️**Importante:**  Caso algum comando não seja reconhecido, instale a ferramenta e configure-a no `PATH` do sistema antes de continuar.
 
-### 3. Clonar o repositório
+### 📍 3. Clonar o repositório
 
 ```powershell
 git clone https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs.git
 cd QA-teste-api-wiremock-codeceptjs
 ```
 
-### 4. Baixar o WireMock
+### 📍 4. Baixar o WireMock
 
 Na **raiz do projeto**, execute:
 
@@ -394,14 +394,14 @@ dir *.jar
 
 > **Alternativa:** depois de instalar as dependências (passo 5), o comando `npm run mock:setup` faz o mesmo download e funciona em qualquer sistema operacional.
 
-### 5. Instalar as dependências
+### 📍 5. Instalar as dependências
 
 ```powershell
 cd backend
 npm install
 ```
 
-> **Importante:** o `npm install` deve ser executado dentro da pasta `backend`, onde está o `package.json`.
+> ⚠️**Importante:**  O `npm install` deve ser executado dentro da pasta `backend`, onde está o `package.json`.
 
 ---
 
@@ -409,7 +409,7 @@ npm install
 
 A execução envolve dois processos em paralelo, então use **duas janelas do PowerShell**.
 
-### Terminal 1: iniciar o WireMock
+### 📍 Terminal 1: iniciar o WireMock
 
 Na **raiz do projeto**:
 
@@ -435,7 +435,7 @@ https://github.com/user-attachments/assets/687afc1d-f93b-4820-99ba-f5e9046547e9
 
 </details>
 
-### Terminal 2: executar os testes
+### 📍 Terminal 2: executar os testes
 
 ```powershell
 cd backend
@@ -466,7 +466,7 @@ https://github.com/user-attachments/assets/4b4bad36-0754-4fd1-8218-c17393b2b952
 
 </details>
 
-### Modo detalhado
+### 📍 Modo detalhado
 
 ```powershell
 npx codeceptjs run --verbose
@@ -482,7 +482,7 @@ https://github.com/user-attachments/assets/d42b4911-3fe0-478a-b40d-a0d87f9a912e
 
 </details>
 
-### Fluxo completo de execução
+### 📍 Fluxo completo de execução
 
 ```text
 1. Instalar Git, Node.js, npm e Java
