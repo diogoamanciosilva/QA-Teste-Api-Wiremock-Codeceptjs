@@ -425,10 +425,13 @@ port: 8080
 
 > ⚠️ **Importante: não feche este terminal.** O WireMock precisa permanecer em execução durante os testes.
 
-<details>
-<summary>🎬 Evidências (vídeo e print)</summary>
+
+# 🎬 Vídeo:
 
 https://github.com/user-attachments/assets/687afc1d-f93b-4820-99ba-f5e9046547e9
+
+
+# 📸 Print:
 
 <img width="1913" height="1078" alt="Print do WireMock em execução" src="https://github.com/user-attachments/assets/7dd60178-5ee0-4723-bc18-9e2b7a8268ec" />
 
@@ -457,9 +460,11 @@ Consulta de veiculos --
 ```
 
 
-# 🎬 Evidências (Vídeo e Print)
 
+# 🎬 Vídeo:
 https://github.com/user-attachments/assets/4b4bad36-0754-4fd1-8218-c17393b2b952
+
+# 📸 Print:
 
 <img width="1917" height="1078" alt="Print da execução da suíte" src="https://github.com/user-attachments/assets/1428239d-7ac0-4951-97da-bf10e507f3c0" />
 
