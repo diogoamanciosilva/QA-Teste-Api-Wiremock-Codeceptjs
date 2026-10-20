@@ -69,18 +69,25 @@ Na prática, os testes automatizados simulam operações que um usuário ou sist
 
 ## 🧭 Jornada do usuário
 
-Imagine uma aplicação de veículos que precisa conversar com uma API para consultar e cadastrar veículos. Cada operação dessa aplicação corresponde a um cenário da suíte:
+Imagine que o usuário esteja utilizando uma aplicação de veículos. Essa aplicação precisa conversar com uma API para consultar e cadastrar veículos.
 
-| Funcionalidade | Método / Status | Validação de comportamento |
+| Cenário / Funcionalidade | Método / Status HTTP | Validação de Comportamento |
 | :--- | :---: | :--- |
-| **Consulta de veículos** | `GET` (`200`) | Retorna a lista de veículos (no mock, um veículo). |
-| **Cadastro de veículo válido** | `POST` (`201`) | Confirma o cadastro com sucesso e retorna o `carId`. |
-| **Recurso inexistente** | `POST` (`404`) | Recusa o cadastro de um veículo não encontrado. |
-| **Erro interno do servidor** | `POST` (`500`) | Valida a resposta diante de um modelo não permitido. |
+| **Consulta de Veículos** | `GET` | Retorna a lista completa de veículos disponíveis. |
+| **Cadastro de Veículo Válido** | `POST` (`201`) | Registra o novo veículo e confirma a criação com sucesso. |
+| **Recurso Inexistente** | `GET` / `POST` (`404`) | Garante que requisições para veículos inexistentes sejam tratadas corretamente. |
+| **Erro Interno do Servidor** | `POST` (`500`) | Valida a resposta do sistema diante de envios com modelos não permitidos. |
 
-### Por que testar contra um mock?
+# 🎯 Objetivo da Automação
 
-O objetivo é praticar a estrutura de automação (configuração, helpers, organização dos testes e validação das respostas), não validar as regras de negócio de uma aplicação real. O WireMock permite reproduzir respostas `200`, `201`, `404` e `500` de forma controlada e repetível, sem depender de um backend disponível.
+> É um projeto de automação de testes de API que simula uma aplicação de gerenciamento de veículos, utilizando o WireMock como backend simulado e o CodeceptJS para validar automaticamente cenários de sucesso e diferentes condições de erro.
+
+
+# 🏹 Por que testar contra um mock?
+
+O objetivo é praticar a estrutura de automação (configuração, helpers, organização dos testes e validação das respostas), não validar as regras de negócio de uma aplicação real. 
+
+O WireMock permite reproduzir respostas `200`, `201`, `404` e `500` de forma controlada e repetível, sem depender de um backend disponível.
 
 ---
 
