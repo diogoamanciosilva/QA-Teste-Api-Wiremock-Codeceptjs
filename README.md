@@ -747,18 +747,19 @@ Evoluções planejadas, da mais simples à mais avançada:
 - **Cenários positivos e negativos:** validação de respostas `200`, `201`, `404` e `500`, entendendo a importância de testar não só o caminho feliz, mas também o comportamento diante de falhas.
 - **Códigos de status HTTP:** compreensão do significado de cada código e senso crítico sobre sua adequação. Neste projeto, o 404 e o 500 foram usados com finalidade didática, e reconheço que, em uma API real, erros de validação seriam tratados com `400` ou `422`.
 - **Testes exploratórios de API com Postman:** uso do Postman como etapa prévia à automação. Antes de transformar um cenário em teste no CodeceptJS, eu enviava as requisições `GET /api/cars` e `POST /api/cars` manualmente para:
-  - confirmar o comportamento esperado do endpoint (método HTTP, payload JSON, status code e mensagem retornada);
-  - validar se o WireMock respondia conforme o mapping configurado;
-  - diagnosticar falhas, comparando o resultado manual com o resultado da automação para descobrir se o problema estava no teste, no mock ou no ambiente.
+  - Confirmar o comportamento esperado do endpoint (método HTTP, payload JSON, status code e mensagem retornada);
+  - Validar se o WireMock respondia conforme o mapping configurado;
+  - Diagnosticar falhas, comparando o resultado manual com o resultado da automação para descobrir se o problema estava no teste, no mock ou no ambiente.
 
   Com isso, entendi que o **Postman** complementa a automação, funcionando como ferramenta de exploração, validação e diagnóstico, enquanto o **CodeceptJS** garante a execução repetível e confiável dos cenários.
-- **Relatórios de execução:** geração de relatório visual com Mochawesome, facilitando a análise de resultados e a comunicação com outras pessoas do time.
-- **Integração contínua com GitHub Actions:** criação de um workflow que configura Node.js e Java, baixa e inicia o WireMock, aguarda sua disponibilidade, executa a suíte e publica o relatório Mochawesome como *artifact*, além do uso de scripts npm, variáveis de ambiente e versões fixadas por major (Ubuntu 24.04 e actions atualizadas) para tornar a execução reproduzível.
-- **Diagnóstico de problemas:** análise de erros comuns do ambiente (WireMock desligado, que gera `ECONNREFUSED`, WireMock iniciado fora da raiz do projeto, porta em uso, Java ou Node fora do `PATH`, `npm install` executado na pasta errada) e registro das soluções na tabela de *Problemas comuns*.
-- **Segurança de dependências:** leitura do relatório do `npm audit` e decisão consciente de não aplicar `npm audit fix --force`, que instalaria uma versão anterior do CodeceptJS com mudança incompatível, registrando a limitação no projeto.
-- **Organização e documentação:** estruturação do repositório em pastas com responsabilidades claras (`backend/`, `mappings/` e `scripts/`) e escrita de um README com passo a passo reproduzível.
-- **Versionamento com Git e GitHub:** uso do Git para controle de versão, trabalho em branch própria (`ci/github-actions`) e pull request para publicar as alterações.
-- **Visão crítica e evolução:** identificação das limitações do projeto e planejamento dos próximos passos (validação do corpo das respostas, ampliação de cobertura e versionamento da coleção do Postman).
+  
+- **Relatórios de execução:** Geração de relatório visual com Mochawesome, facilitando a análise de resultados e a comunicação com outras pessoas do time.
+- **Integração contínua com GitHub Actions:** Criação de um workflow que configura Node.js e Java, baixa e inicia o WireMock, aguarda sua disponibilidade, executa a suíte e publica o relatório Mochawesome como *artifact*, além do uso de scripts npm, variáveis de ambiente e versões fixadas por major (Ubuntu 24.04 e actions atualizadas) para tornar a execução reproduzível.
+- **Diagnóstico de problemas:** Análise de erros comuns do ambiente (WireMock desligado, que gera `ECONNREFUSED`, WireMock iniciado fora da raiz do projeto, porta em uso, Java ou Node fora do `PATH`, `npm install` executado na pasta errada) e registro das soluções na tabela de *Problemas comuns*.
+- **Segurança de dependências:** Leitura do relatório do `npm audit` e decisão consciente de não aplicar `npm audit fix --force`, que instalaria uma versão anterior do CodeceptJS com mudança incompatível, registrando a limitação no projeto.
+- **Organização e documentação:** Estruturação do repositório em pastas com responsabilidades claras (`backend/`, `mappings/` e `scripts/`) e escrita de um README com passo a passo reproduzível.
+- **Versionamento com Git e GitHub:** Uso do Git para controle de versão, trabalho em branch própria (`ci/github-actions`) e pull request para publicar as alterações.
+- **Visão crítica e evolução:** Identificação das limitações do projeto e planejamento dos próximos passos (validação do corpo das respostas, ampliação de cobertura e versionamento da coleção do Postman).
 
 ---
 
