@@ -51,20 +51,19 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 
 ## 📌 Sobre o projeto
 
-O projeto simula uma **API de gerenciamento de veículos** e usa o **WireMock** para representar o comportamento de um backend, permitindo testar diferentes respostas da API sem depender de um sistema real.
+O projeto simula uma **API de gerenciamento de veículo**s e utiliza o **WireMock** para representar o **comportamento de um backend real**, permitindo testar diferentes respostas da API sem depender de um sistema de produção.
 
-Os testes automatizados simulam as operações que um usuário ou sistema cliente faria:
+Na prática, os testes automatizados simulam operações que um usuário ou sistema cliente faria, como:
 
-| Cenário | Método | Resposta esperada |
+| Cenário | Método | Resposta Esperada |
 | :--- | :---: | :--- |
-| Consulta de veículos | `GET` | `200 OK` |
-| Cadastro de veículo válido | `POST` | `201 Created` |
-| Cadastro de veículo inexistente | `POST` | `404 Not Found` |
-| Cadastro de modelo não permitido | `POST` | `500 Internal Server Error` |
+| **Consultas de dados** | `GET` | `200 OK` |
+| **Cadastros válidos (permitidos)** | `POST` | `201 Created` |
+| **Cadastros inválidos (não permitidos)** | `POST` | `500 Internal Server Error` |
+| **Requisições de recursos inexistentes** | `POST` / `GET` | `404 Not Found` |
 
-O **CodeceptJS** envia as requisições e valida as respostas. O **WireMock** atua como o backend simulado, fornecendo respostas previamente configuradas.
+O CodeceptJS envia as requisições e valida se a API retorna exatamente o comportamento esperado. O WireMock atua como o backend simulado, fornecendo respostas previamente configuradas.
 
-> **Em uma frase:** é um projeto de automação de testes de API que simula uma aplicação de gerenciamento de veículos, usando o WireMock como backend simulado e o CodeceptJS para validar automaticamente cenários de sucesso e de erro.
 
 ## 🧭 Jornada do usuário
 
