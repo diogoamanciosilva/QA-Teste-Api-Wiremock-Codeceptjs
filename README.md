@@ -746,7 +746,7 @@ Evoluções planejadas, da mais simples à mais avançada:
   - Validar se o WireMock respondia conforme o mapping configurado;
   - Diagnosticar falhas, comparando o resultado manual com o resultado da automação para descobrir se o problema estava no teste, no mock ou no ambiente.
 
-  Com isso, entendi que o **Postman** complementa a automação, funcionando como ferramenta de exploração, validação e diagnóstico, enquanto o **CodeceptJS** garante a execução repetível e confiável dos cenários.
+  > ⚠️**Importante:** Com isso, entendi que o **Postman** complementa a automação, funcionando como ferramenta de exploração, validação e diagnóstico, enquanto o **CodeceptJS** garante a execução repetível e confiável dos cenários.
   
 - **Relatórios de execução:** Geração de relatório visual com Mochawesome, facilitando a análise de resultados e a comunicação com outras pessoas do time.
 - **Integração contínua com GitHub Actions:** Criação de um workflow que configura Node.js e Java, baixa e inicia o WireMock, aguarda sua disponibilidade, executa a suíte e publica o relatório Mochawesome como *artifact*, além do uso de scripts npm, variáveis de ambiente e versões fixadas por major (Ubuntu 24.04 e actions atualizadas) para tornar a execução reproduzível.
