@@ -124,7 +124,7 @@ Os testes (`backend/tests/veiculos_teste.js`) validam o endpoint `/api/cars` com
 
 Cada caso traz o cenário em formato BDD, o comando de execução e as evidências (automação com CodeceptJS e validação manual no Postman).
 
-> Execute os comandos de cada caso a partir da pasta `backend/`, com o WireMock em execução (`npm run mock`).
+> ⚠️**Importante:** Execute os comandos de cada caso a partir da pasta `backend/`, com o WireMock em execução (`npm run mock`).
 
 ### 🚙🔍 CT-01 - Consulta de veículos
 
