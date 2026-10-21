@@ -794,6 +794,8 @@ Organização da estrutura do projeto em diretórios com responsabilidades bem d
 **13. Versionamento estruturado e visão de evolução contínua**
 
 Uso de boas práticas de Git e GitHub com trabalho em branch dedicada (`ci/github-actions`) e abertura de Pull Request para Code Review. Identificação clara de melhorias futuras para a suíte, tais como validação aprofundada do schema do JSON, ampliação de cobertura e versionamento da coleção do Postman no repositório.
+
+
 ---
 
 # 📬 Contato
