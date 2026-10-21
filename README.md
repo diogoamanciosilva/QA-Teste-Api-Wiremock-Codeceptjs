@@ -735,28 +735,65 @@ Evoluções planejadas, da mais simples à mais avançada:
 
 # 💡 Aprendizados técnicos
 
-- **Automação de testes de API com CodeceptJS:** configuração do projeto, escrita de cenários e execução da suíte via `npx codeceptjs run`, incluindo o modo `--verbose` para depuração.
-- **Helpers `REST` e `JSONResponse`:** uso do `REST` para enviar requisições HTTP (`GET` e `POST`) e do `JSONResponse` para validar status code e corpo das respostas. Aprendi na prática que, sem o `JSONResponse` configurado, os métodos de validação, como `seeResponseCodeIs`, não ficam disponíveis.
-- **Configuração de ambiente de testes:** definição da URL base e dos `defaultHeaders` no `codecept.conf.js`, uso de caminhos relativos com barra inicial (`/api/cars`) e a necessidade de manter a porta do WireMock alinhada com o `endpoint` do CodeceptJS.
-- **Mocking de API com WireMock:** criação de mappings em JSON, com correspondência por rota, método e corpo da requisição (`equalToJson`), para simular diferentes respostas de um mesmo endpoint de forma controlada e sem depender de um backend real.
-- **Cenários positivos e negativos:** validação de respostas `200`, `201`, `404` e `500`, entendendo a importância de testar não só o caminho feliz, mas também o comportamento diante de falhas.
-- **Códigos de status HTTP:** compreensão do significado de cada código e senso crítico sobre sua adequação. Neste projeto, o 404 e o 500 foram usados com finalidade didática, e reconheço que, em uma API real, erros de validação seriam tratados com `400` ou `422`.
-- **Testes exploratórios de API com Postman:** uso do Postman como etapa prévia à automação. Antes de transformar um cenário em teste no CodeceptJS, eu enviava as requisições `GET /api/cars` e `POST /api/cars` manualmente para:
-  - Confirmar o comportamento esperado do endpoint (método HTTP, payload JSON, status code e mensagem retornada);
-  - Validar se o WireMock respondia conforme o mapping configurado;
-  - Diagnosticar falhas, comparando o resultado manual com o resultado da automação para descobrir se o problema estava no teste, no mock ou no ambiente.
 
-**Observação:** 
-Com isso, entendi que o **Postman** complementa a automação, funcionando como ferramenta de exploração, validação e diagnóstico, enquanto o **CodeceptJS** garante a execução repetível e confiável dos cenários.
-  
-- **Relatórios de execução:** Geração de relatório visual com Mochawesome, facilitando a análise de resultados e a comunicação com outras pessoas do time.
-- **Integração contínua com GitHub Actions:** Criação de um workflow que configura Node.js e Java, baixa e inicia o WireMock, aguarda sua disponibilidade, executa a suíte e publica o relatório Mochawesome como *artifact*, além do uso de scripts npm, variáveis de ambiente e versões fixadas por major (Ubuntu 24.04 e actions atualizadas) para tornar a execução reproduzível.
-- **Diagnóstico de problemas:** Análise de erros comuns do ambiente (WireMock desligado, que gera `ECONNREFUSED`, WireMock iniciado fora da raiz do projeto, porta em uso, Java ou Node fora do `PATH`, `npm install` executado na pasta errada) e registro das soluções na tabela de *Problemas comuns*.
-- **Segurança de dependências:** Leitura do relatório do `npm audit` e decisão consciente de não aplicar `npm audit fix --force`, que instalaria uma versão anterior do CodeceptJS com mudança incompatível, registrando a limitação no projeto.
-- **Organização e documentação:** Estruturação do repositório em pastas com responsabilidades claras (`backend/`, `mappings/` e `scripts/`) e escrita de um README com passo a passo reproduzível.
-- **Versionamento com Git e GitHub:** Uso do Git para controle de versão, trabalho em branch própria (`ci/github-actions`) e pull request para publicar as alterações.
-- **Visão crítica e evolução:** Identificação das limitações do projeto e planejamento dos próximos passos (validação do corpo das respostas, ampliação de cobertura e versionamento da coleção do Postman).
+A execução deste projeto gerou aprendizados técnicos concretos em treze áreas:
 
+**1. Automação de testes de API com CodeceptJS**
+
+Configuração completa do projeto, escrita de cenários BDD e execução da suíte via `npx codeceptjs run`. O uso do modo `--verbose` provou-se essencial para a etapa de depuração, permitindo inspecionar o fluxo de execução e as chamadas de rede em detalhes.
+
+**2. Integração e dependência dos Helpers REST e JSONResponse**
+
+Uso do helper `REST` para envio de requisições HTTP (`GET` e `POST`) combinado ao `JSONResponse` para validação de status code e contrato da resposta. Ficou demonstrado na prática que o `JSONResponse` é obrigatório para liberar métodos nativos de asserção, como `seeResponseCodeIs`.
+
+**3. Gestão de configuração e ambiente de testes**
+
+Definição centralizada da URL base e de `defaultHeaders` no arquivo `codecept.conf.js`. Aprendizado prático sobre a utilização de caminhos relativos com barra inicial (`/api/cars`) e sobre a necessidade de manter o alinhamento estrito entre a porta do WireMock e o endpoint configurado no CodeceptJS.
+
+**4. Mocking de APIs com WireMock**
+
+Criação e estruturação de mappings em JSON utilizando correspondência por rota, método e corpo da requisição (`equalToJson`). Essa abordagem permitiu simular diferentes comportamentos e respostas de um mesmo endpoint de forma controlada, eliminando a dependência de um ambiente de backend real.
+
+**5. Cobertura de cenários positivos e negativos**
+
+Implementação e validação de cenários cobrindo respostas `200`, `201`, `404` e `500`. A prática consolidou a importância de testar não apenas o caminho feliz (*happy path*), mas também garantir que a aplicação responda de maneira previsível diante de falhas e exceções.
+
+**6. Análise crítica de códigos de status HTTP**
+
+Compreensão aprofundada dos códigos de status e desenvolvimento de senso crítico sobre sua aplicação real de negócio. Embora os códigos `404` e `500` tenham sido utilizados com finalidade didática neste projeto, em uma API em produção erros de validação e payloads incorretos devem retornar `400 Bad Request` ou `422 Unprocessable Entity`.
+
+**7. Testes exploratórios e diagnóstico prévio com Postman**
+
+Uso do Postman como etapa estratégica anterior à automação para envio manual das requisições (`GET /api/cars` e `POST /api/cars`). Essa prática permitiu:
+- Confirmar o comportamento esperado do endpoint (métodos, payloads, status code e contrato);
+- Validar as regras do mock no WireMock antes de automatizar;
+- Isolar falhas comparando a execução manual com a automatizada para identificar se o problema residia no script, no mock ou no ambiente.
+
+> **Nota:** O Postman atua como ferramenta complementar de exploração e diagnóstico, enquanto o CodeceptJS garante a execução repetível, integrada e automatizada dos cenários.
+
+**8. Consolidação de relatórios visuais com Mochawesome**
+
+Integração do relator Mochawesome para geração automática de relatórios visuais ao final da execução. A estrutura facilita a análise de causa raiz em falhas e otimiza a comunicação do status da qualidade com o time.
+
+**9. Integração contínua e pipelines com GitHub Actions**
+
+Criação de um workflow completo que provisiona Node.js e Java, faz o download e inicialização do WireMock, aguarda a disponibilidade do servidor e executa a suíte de testes. O pipeline publica os relatórios do Mochawesome como *artifacts* e utiliza versões fixadas por major (Ubuntu 24.04 e actions atualizadas) para garantir execuções reproduzíveis.
+
+**10. Diagnóstico e resolução de falhas de ambiente**
+
+Mapeamento e resolução de erros recorrentes de infraestrutura local e CI (como `ECONNREFUSED` por WireMock offline, execução fora da raiz do projeto, portas em uso, ausência de Java/Node no `PATH` ou `npm install` em diretório incorreto). As soluções foram documentadas na seção de *Problemas comuns* para rápido diagnóstico.
+
+**11. Gestão de segurança e análise de vulnerabilidades de dependências**
+
+Análise consciente do relatório emitido pelo `npm audit`. A decisão técnica de **não** aplicar o comando `npm audit fix --force` evitou o downgrade para uma versão legada do CodeceptJS com *breaking changes*, mantendo a estabilidade do projeto e registrando a limitação de forma transparente.
+
+**12. Arquitetura do repositório e padronização da documentação**
+
+Organização da estrutura do projeto em diretórios com responsabilidades bem definidas (`backend/`, `mappings/` e `scripts/`). Produção de um arquivo `README.md` completo, garantindo que qualquer pessoa desenvolvedora ou de QA consiga reproduzir o ambiente do zero.
+
+**13. Versionamento estruturado e visão de evolução contínua**
+
+Uso de boas práticas de Git e GitHub com trabalho em branch dedicada (`ci/github-actions`) e abertura de Pull Request para Code Review. Identificação clara de melhorias futuras para a suíte, tais como validação aprofundada do schema do JSON, ampliação de cobertura e versionamento da coleção do Postman no repositório.
 ---
 
 # 📬 Contato
