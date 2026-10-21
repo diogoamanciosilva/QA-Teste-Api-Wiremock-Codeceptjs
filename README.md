@@ -6,8 +6,6 @@ Projeto de automação de testes de **API desenvolvido com CodeceptJS**, utiliza
 
 A suíte foi organizada para oferecer um ambiente modular, simples e de fácil execução, validando múltiplos comportamentos de uma API REST. 
 
-<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
-
 A base didática e API Simulada com base nos conhecimentos adquiridos no curso **Automação API com JavaScript**, desenvolvida pela **Qazando** (https://qazando.com.br), **Professores Eduardo Finotti e Hebert Soares.**
 
 Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo Amancio**.
@@ -60,6 +58,8 @@ Na prática, os testes automatizados simulam operações que um usuário ou sist
 👉🏻 O **CodeceptJS** envia as requisições e valida se a API retorna exatamente o comportamento esperado. 
 
 👉🏻 O **WireMock** atua como o backend simulado, fornecendo respostas previamente configuradas.
+
+<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
 
 
 # 🧭 Jornada do usuário
