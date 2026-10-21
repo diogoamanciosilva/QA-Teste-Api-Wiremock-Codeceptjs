@@ -10,6 +10,9 @@ A base didática e API Simulada com base nos conhecimentos adquiridos no curso *
 
 Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo Amancio**.
 
+<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
+
+
 ---
 
 ## 📑 Índice
@@ -58,8 +61,6 @@ Na prática, os testes automatizados simulam operações que um usuário ou sist
 👉🏻 O **CodeceptJS** envia as requisições e valida se a API retorna exatamente o comportamento esperado. 
 
 👉🏻 O **WireMock** atua como o backend simulado, fornecendo respostas previamente configuradas.
-
-<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
 
 
 # 🧭 Jornada do usuário
@@ -443,9 +444,9 @@ cd backend
 npx codeceptjs run
 ```
 
-> Se o terminal já estiver na pasta `backend`, pule o `cd backend`.
+> ⚠️ **Importante**: Se o terminal já estiver na pasta `backend`, pule o `cd backend`.
 
-Resultado esperado:
+**Resultado esperado:**
 
 ```text
 Consulta de veiculos --
@@ -525,7 +526,7 @@ npm run mock         # Terminal 1: inicia o WireMock na porta 8080
 npm test             # Terminal 2: executa a suíte
 ```
 
-O `npm run mock` aponta para a pasta `mappings/` da raiz, então pode ser executado de dentro de `backend/`.
+> ⚠️ **Importante**: O `npm run mock` aponta para a pasta `mappings/` da raiz, então pode ser executado de dentro de `backend/`.
 
 ### 📍 Usar outra porta
 
