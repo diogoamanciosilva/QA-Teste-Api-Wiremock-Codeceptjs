@@ -719,9 +719,9 @@ Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhec
 
 # 🎯 Próximos passos
 
-✅ **Concluído:** scripts npm, URL base por variável de ambiente, download automatizado do WireMock e pipeline no GitHub Actions com relatório Mochawesome e badge de status.
+✅ **Concluído:** Scripts npm, URL base por variável de ambiente, download automatizado do WireMock e pipeline no GitHub Actions com relatório Mochawesome e badge de status.
 
-Evoluções planejadas, da mais simples à mais avançada:
+🔼 **Evoluções planejadas, da mais simples à mais avançada:**
 
 1. **Validar o corpo do `GET`:** conferir no CT-01 a lista de veículos retornada, e não só o status.
 2. **Ampliar a cobertura:** cenários negativos (campos obrigatórios, tipos e valores inválidos), validação de schema das respostas e uso de *Scenarios* do WireMock para simular estado.
