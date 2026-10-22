@@ -18,8 +18,6 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 [![Relatório](https://img.shields.io/badge/Relatório-Mochawesome-purple)]()
 [![Licença](https://img.shields.io/badge/Licença-MIT-lightgrey)]()
 
-<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
-
 >Projeto de automação de testes de API desenvolvido com CodeceptJS e WireMock,
 >Validando os principais comportamentos de uma API REST de gerenciamento de veículos em cenários de sucesso e erro (`200`, `201`, `404`, `500`).
 ---
@@ -71,6 +69,7 @@ Na prática, os testes automatizados simulam operações que um usuário ou sist
 
 👉🏻 O **WireMock** atua como o backend simulado, fornecendo respostas previamente configuradas.
 
+<img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
 
 # 🧭 Jornada do usuário
 
