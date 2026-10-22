@@ -1,4 +1,4 @@
-# 🚗 QA - Testes de API com CodeceptJS e WireMock
+# 🤖 QA - Testes de API com CodeceptJS e WireMock
 
 [![API Tests](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml/badge.svg?branch=master)](https://github.com/diogoamanciosilva/QA-teste-api-wiremock-codeceptjs/actions/workflows/api-tests.yml)
 
