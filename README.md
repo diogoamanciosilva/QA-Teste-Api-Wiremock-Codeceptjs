@@ -27,7 +27,7 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 ## 📑 Índice
 
 - [📌 Sobre o projeto](#-sobre-o-projeto)
-- [🧰 Tecnologias](#-tecnologias)
+- [🏷️ Tecnologias](#-tecnologias)
 - [🧭 Jornada do usuário](#-jornada-do-usuário)
 - [🎯 Objetivo da Automação](#-objetivo-da-automação)
 - [🧪 Casos de teste](#-casos-de-teste)
@@ -103,7 +103,7 @@ O WireMock permite reproduzir respostas `200`, `201`, `404` e `500` de forma con
 
 ---
 
-# 🧰 Tecnologias
+# 🏷️ Tecnologias
 
 ![API](https://img.shields.io/badge/API-Testing-1E88E5?style=for-the-badge)
 ![REST API](https://img.shields.io/badge/REST%20API-Testing-6C63FF?style=for-the-badge)
