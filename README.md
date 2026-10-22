@@ -10,6 +10,14 @@ A base didática e API Simulada com base nos conhecimentos adquiridos no curso *
 
 Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo Amancio**.
 
+[![Testes](https://img.shields.io/badge/Testes-4%20cenários-brightgreen)]()
+[![CI](https://github.com/diogoamanciosilva/QA-Teste-Api-Wiremock-Codeceptjs/actions/workflows/api-tests.yml/badge.svg?branch=master)](https://github.com/diogoamanciosilva/QA-Teste-Api-Wiremock-Codeceptjs/actions/workflows/api-tests.yml)
+[![Stack](https://img.shields.io/badge/Stack-CodeceptJS%20%7C%20WireMock%20%7C%20Node.js-yellow)]()
+[![Tipo](https://img.shields.io/badge/Tipo-Testes%20de%20API-blue)]()
+[![Mock](https://img.shields.io/badge/Mock-WireMock%203.9.1-orange)]()
+[![Relatório](https://img.shields.io/badge/Relatório-Mochawesome-purple)]()
+[![Licença](https://img.shields.io/badge/Licença-MIT-lightgrey)]()
+
 <img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
 
 
