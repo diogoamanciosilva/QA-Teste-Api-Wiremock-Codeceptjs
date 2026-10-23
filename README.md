@@ -4,11 +4,11 @@
 
 Projeto de automação de testes de **API desenvolvido com CodeceptJS**, utilizando os **helpers REST e JSONResponse** integrados ao **WireMock** para mock e simulação de serviços.
 
-A suíte foi organizada para oferecer um ambiente modular, simples e de fácil execução, validando múltiplos comportamentos de uma API REST. 
+A suíte foi organizada para oferecer um ambiente modular, simples e de fácil execução, validando múltiplos comportamentos de uma API REST.
 
 <img width="1312" height="1199" alt="Testes de API com CodeceptJS e WireMock" src="https://github.com/user-attachments/assets/28d6fb83-e31d-490f-856d-15b497647fe4" />
 
-A base didática e API Simulada com base nos conhecimentos adquiridos no curso **Automação API com JavaScript**, desenvolvida pela **Qazando** (https://qazando.com.br), **Professores Eduardo Finotti e Hebert Soares.**
+A base didática e API Simulada com base nos conhecimentos adquiridos no curso **Automação API com JavaScript**, desenvolvida pela **Qazando** ...
 
 Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo Amancio**.
 
@@ -20,8 +20,9 @@ Todos os testes e a estrutura deste repositório foram desenvolvidos por **Diogo
 [![Relatório](https://img.shields.io/badge/Relatório-Mochawesome-purple)]()
 [![Licença](https://img.shields.io/badge/Licença-MIT-lightgrey)]()
 
->Projeto de automação de testes de API desenvolvido com CodeceptJS e WireMock,
->Validando os principais comportamentos de uma API REST de gerenciamento de veículos em cenários de sucesso e erro (`200`, `201`, `404`, `500`).
+> Projeto de automação de testes de API desenvolvido com CodeceptJS e WireMock,
+> validando os principais comportamentos de uma API REST de gerenciamento de veículos
+> em cenários de sucesso e erro (`200`, `201`, `404`, `500`).
 ---
 
 ## 📑 Índice
