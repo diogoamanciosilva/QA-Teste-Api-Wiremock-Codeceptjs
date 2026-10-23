@@ -735,7 +735,7 @@ Este projeto tem finalidade **didática** e foi desenvolvido a partir dos conhec
 1. **Validar o corpo do `GET`:** conferir no CT-01 a lista de veículos retornada, e não só o status.
 2. **Ampliar a cobertura:** cenários negativos (campos obrigatórios, tipos e valores inválidos), validação de schema das respostas e uso de *Scenarios* do WireMock para simular estado.
 3. **Revisar os status codes** dos erros de validação, alinhando-os às boas práticas REST (`400`/`422`), e documentar a decisão.
-4. **Versionar a coleção do Postman** em uma pasta `postman/`, com asserts na aba *Tests*.
+4. **Documentação do Postman:** os cenários foram validados manualmente no Postman com evidências em vídeo e print para cada caso de teste (CT-01 a CT-04). Como evolução, exportar e versionar a coleção `.json` na pasta `postman/`, com asserts na aba *Tests*, permitiria reprodução automatizada das validações manuais diretamente pelo Postman.
 5. **Rastreabilidade:** usar os IDs `CT-01` a `CT-04` também nos nomes dos testes e no relatório.
 6. **Manter as dependências em dia:** acompanhar as atualizações do CodeceptJS e do Mochawesome para reduzir os alertas do `npm audit`, e migrar do uso de funções globais, que o CodeceptJS 4 sinaliza como depreciado.
 7. **Compatibilidade multiplataforma:** documentar os comandos para Linux e macOS, além do PowerShell.
