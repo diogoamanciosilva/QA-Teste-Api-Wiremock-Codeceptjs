@@ -806,11 +806,10 @@ Uso de boas práticas de Git e GitHub com trabalho em branch dedicada (`ci/githu
 
 ---
 
-# 📬 Contato
+## 📬 Contato
 
-| LinkedIn                   |  https://www.linkedin.com/in/diogoamanciosilva/ |
-| ------------------------- | ------: |
-
-| E-mail                   |  diogoamanciosilva@gmail.com/ |
-| ------------------------- | ------: |
-
+| Canal | Link |
+|---|---|
+| 💼 LinkedIn | [linkedin.com/in/diogoamanciosilva](https://www.linkedin.com/in/diogoamanciosilva/) |
+| 📧 E-mail | diogoamanciosilva@gmail.com |
+| 🐙 GitHub | [github.com/diogoamanciosilva](https://github.com/diogoamanciosilva) |
